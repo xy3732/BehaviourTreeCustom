@@ -58,9 +58,14 @@ public class BehaviourTreeEditor : EditorWindow
 
         blackboardView.onGUIHandler = () =>
          {
-             treeObject.Update();
-             EditorGUILayout.PropertyField(blackboardProperty);
-             treeObject.ApplyModifiedProperties();
+             // 트리오브젝트 가 없으면 BehaviourTreeEditor창을 열때 버그가 걸린다.
+             // 해당 오브젝트가 없으면 실행 안되게 바꾼다.
+             if(treeObject != null)
+             {
+                 treeObject.Update();
+                 EditorGUILayout.PropertyField(blackboardProperty);
+                 treeObject.ApplyModifiedProperties();
+             }
          };
 
         treeView.OnNodeSelected = OnNodeSelectionChanged;

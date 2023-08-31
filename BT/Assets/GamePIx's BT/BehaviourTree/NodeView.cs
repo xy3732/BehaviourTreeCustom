@@ -35,6 +35,9 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         // 노드 색상 설정
         SetupClasses();
 
+        // 노드 이미지 설정
+        SetupNodeClasses();
+
         Label descriptionLabel = this.Q<Label>("description");
         descriptionLabel.bindingPath = "description";
         descriptionLabel.Bind(new SerializedObject(node));
@@ -58,6 +61,26 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         else if (node is RootNode)
         {
             AddToClassList("root");
+        }
+    }
+
+    private void SetupNodeClasses()
+    {
+        if (node is ActionNode)
+        {
+            AddToClassList("ActionNode");
+        }
+        else if (node is CompositeNode)
+        { 
+            AddToClassList("CompositeNode");
+        }
+        else if (node is DecoratorNode)
+        {
+            AddToClassList("DecoratorNode");
+        }
+        else if (node is RootNode)
+        {
+            AddToClassList("RootNode");
         }
     }
 
