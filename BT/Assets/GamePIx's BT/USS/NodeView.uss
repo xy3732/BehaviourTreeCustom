@@ -1,0 +1,150 @@
+#node-border {
+    background-color: rgb(56, 56, 56);
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#input {
+    align-items: center;
+}
+
+#output {
+    align-items: center;
+}
+
+#selection-border {
+    border-left-color: rgb(47, 136, 255);
+    border-right-color: rgb(47, 136, 255);
+    border-top-color: rgb(47, 136, 255);
+    border-bottom-color: rgb(47, 136, 255);
+    border-left-width: 0;
+    border-right-width: 0;
+    border-top-width: 0;
+    border-bottom-width: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+:hover > #selection-border {
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+}
+
+:selected > #selection-border {
+    border-left-width: 1px;
+    border-right-width: 1px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+}
+
+:hover:selected > #selection-border {
+    border-left-width: 2px;
+    border-right-width: 2px;
+    border-top-width: 2px;
+    border-bottom-width: 2px;
+}
+
+.node {
+    min-width: 150px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#title {
+    font-size: 14px;
+    -unity-font-style: bold;
+    -unity-text-align: upper-center;
+}
+
+#description {
+    -unity-text-align: upper-center;
+    align-items: center;
+    flex-grow: 1;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: 30px;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 150px;
+    white-space: normal;
+}
+
+#divider {
+    min-height: 1px;
+    background-color: rgb(115, 115, 115);
+    -unity-text-align: upper-left;
+}
+
+.action #input {
+    background-color: rgb(76, 224, 179);
+}
+
+.composite #input {
+    background-color: rgb(255, 193, 0);
+}
+
+.decorator #input {
+    background-color: rgb(74, 143, 231);
+}
+
+.root #input {
+    background-color: rgb(217, 93, 57);
+    min-height: 20px;
+}
+
+#node-state {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.success #node-state {
+    background-color: rgba(51, 229, 63, 0.69);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.running #node-state {
+    background-color: rgb(255, 170, 0);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.failure #node-state {
+    background-color: rgb(255, 59, 59);
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
