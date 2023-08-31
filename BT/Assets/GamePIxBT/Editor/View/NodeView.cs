@@ -18,7 +18,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
 
     public Port input;
     public Port output;
-    public NodeView(Node node) : base("Assets/GamePIx's BT/USS/NodeView.uxml")
+    public NodeView(Node node) : base("Assets/GamePIxBT/USS/NodeView.uxml")
     {
         this.node = node;
         this.title = node.name;
@@ -66,21 +66,25 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
 
     private void SetupNodeClasses()
     {
-        if (node is ActionNode)
+        if (node is DebugLogNode)
         {
-            AddToClassList("ActionNode");
+            AddToClassList("DebugLogNode");
         }
-        else if (node is CompositeNode)
+        else if (node is WaitNode)
         { 
-            AddToClassList("CompositeNode");
+            AddToClassList("WaitNode");
         }
-        else if (node is DecoratorNode)
+        else if (node is SequenceNode)
         {
-            AddToClassList("DecoratorNode");
+            AddToClassList("SequenceNode");
         }
         else if (node is RootNode)
         {
             AddToClassList("RootNode");
+        }
+        else if(node is RepeatNode)
+        {
+            AddToClassList("RepeatNode");
         }
     }
 

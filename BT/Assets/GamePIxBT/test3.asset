@@ -1,92 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-2584395909987242348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71690e2d59a46134fac160f8d10a2418, type: 3}
-  m_Name: DebugLogNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: afd73da991270f34ca02270ad7fd8014
-  position: {x: -59.999996, y: 412.00006}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-  description: wait 1 second
-  message: 2
---- !u!114 &-571791397208936801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7986d86e8f0bf744bbf2d3480a2a5f9d, type: 3}
-  m_Name: WaitNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 25cc594eaac14034eb7de8e8edf0a046
-  position: {x: 513, y: 412.0001}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-  description: debug string
-  duration: 1
---- !u!114 &-313668485118082820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71690e2d59a46134fac160f8d10a2418, type: 3}
-  m_Name: DebugLogNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: a5c0b2ed4deacd849a07c9b1e2ad3126
-  position: {x: 354.99997, y: 412.00006}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-  description: wait 1 second
-  message: 3
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29c4fc3c8794f454e9b2f2d68611b580, type: 3}
-  m_Name: test2
-  m_EditorClassIdentifier: 
-  rootNode: {fileID: 6531919927712688615}
-  treeState: 0
-  nodes:
-  - {fileID: 6531919927712688615}
-  - {fileID: 6921157817154299383}
-  - {fileID: 7599292896978412362}
-  - {fileID: -2584395909987242348}
-  - {fileID: 899009438708086032}
-  - {fileID: 3661220485031274360}
-  - {fileID: -313668485118082820}
-  - {fileID: 1281776579882719516}
-  - {fileID: -571791397208936801}
-  blackboard:
-    moveToPosition: {x: 1, y: 2, z: 3}
---- !u!114 &899009438708086032
+--- !u!114 &-6907160658244345277
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,39 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: 258da778458c54749b2ddeacac1e6c89
-  position: {x: 0, y: 217}
+  guid: 5acbc4c6321860e43b17e66ed78119e1
+  position: {x: 0, y: 271}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-  description: First Sequnce
+  description: 
   children:
-  - {fileID: 3661220485031274360}
-  - {fileID: 7599292896978412362}
-  - {fileID: -2584395909987242348}
-  - {fileID: 1281776579882719516}
-  - {fileID: -313668485118082820}
-  - {fileID: -571791397208936801}
---- !u!114 &1281776579882719516
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7986d86e8f0bf744bbf2d3480a2a5f9d, type: 3}
-  m_Name: WaitNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 1bc38add05bacbc42941e3b043360b0f
-  position: {x: 98.00001, y: 412.00006}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-  description: debug string
-  duration: 1
---- !u!114 &3661220485031274360
+  - {fileID: 6421086068297186105}
+  - {fileID: -5479323739861242884}
+  - {fileID: -4700697953103232658}
+  - {fileID: -6381884452413964478}
+  - {fileID: -4369939731407789105}
+  - {fileID: 8118517587208728619}
+--- !u!114 &-6381884452413964478
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -146,13 +40,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: 78b0679733c473040a2e9b7732ef5004
-  position: {x: -424.23508, y: 412}
+  guid: a7964b28b2aba084ba599282204ce282
+  position: {x: 288, y: 472}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-  description: wait 1 second
-  message: 1
---- !u!114 &6531919927712688615
+  description: delay check debugger
+  message: delay check
+--- !u!114 &-6220283003618303368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -166,13 +60,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: 0bd332278ed76084e9007301bd44de33
-  position: {x: 0, y: 0}
+  guid: 863045c59d6c1b049a3108797237e8ef
+  position: {x: 0, y: 1}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-  description: Start
-  child: {fileID: 6921157817154299383}
---- !u!114 &6921157817154299383
+  description: First Node
+  child: {fileID: -5737715628223107850}
+--- !u!114 &-5737715628223107850
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,13 +80,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: 67ce6b1bac025f944abce070ec3159f1
-  position: {x: -0.000002861023, y: 114.600006}
+  guid: 5323562c92b6c64478fbe9a07ec3f046
+  position: {x: 0, y: 135}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-  description: Repeat
-  child: {fileID: 899009438708086032}
---- !u!114 &7599292896978412362
+  description: Repeat All Node
+  child: {fileID: -6907160658244345277}
+--- !u!114 &-5479323739861242884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71690e2d59a46134fac160f8d10a2418, type: 3}
+  m_Name: DebugLogNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 7308d555137a92141a1f08e086734513
+  position: {x: -158.00006, y: 472.00003}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: DebugString
+  message: Change Random Pos
+--- !u!114 &-4700697953103232658
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,9 +120,97 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: 6383defb4b0da3d4d97776c49dcbfaba
-  position: {x: -266, y: 412.00003}
+  guid: 1e7a4d33eb4154144ae1f2887877b7c7
+  position: {x: 0, y: 472}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-  description: debug string
+  description: wait 1 second
   duration: 1
+--- !u!114 &-4369939731407789105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7986d86e8f0bf744bbf2d3480a2a5f9d, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ad9c616cfdb1254438ff17976947b9cf
+  position: {x: 446, y: 472}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 'wait 1 second
+
+'
+  duration: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c4fc3c8794f454e9b2f2d68611b580, type: 3}
+  m_Name: test3
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -6220283003618303368}
+  treeState: 0
+  nodes:
+  - {fileID: -6220283003618303368}
+  - {fileID: -6907160658244345277}
+  - {fileID: -5737715628223107850}
+  - {fileID: -5479323739861242884}
+  - {fileID: -4700697953103232658}
+  - {fileID: -6381884452413964478}
+  - {fileID: -4369939731407789105}
+  - {fileID: 6421086068297186105}
+  - {fileID: 8118517587208728619}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &6421086068297186105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: RandomVector3Node
+  m_EditorClassIdentifier: Assembly-CSharp::RandomVector3Node
+  state: 0
+  started: 0
+  guid: 7ac73af82af8f89499b64bdaaa0bb6b5
+  position: {x: -474.00006, y: 472.00003}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: RandomVector3 by (-10 ~ 10)
+  min: {x: -10, y: -10, z: -10}
+  max: {x: 10, y: 10, z: 10}
+--- !u!114 &8118517587208728619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: SetVector3Node
+  m_EditorClassIdentifier: Assembly-CSharp::SetVector3Node
+  state: 0
+  started: 0
+  guid: 426dd749fee886240ab490d7ab100957
+  position: {x: -316, y: 472}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: Set vector3 in blackboard

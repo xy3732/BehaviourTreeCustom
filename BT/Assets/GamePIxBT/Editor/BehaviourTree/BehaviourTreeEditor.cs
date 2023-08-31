@@ -46,10 +46,10 @@ public class BehaviourTreeEditor : EditorWindow
         VisualElement root = rootVisualElement;
 
         // Import UXML
-        var visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/GamePIx's BT/USS/BehaviourTreeEditor.uxml");
+        var visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/GamePIxBT/USS/BehaviourTreeEditor.uxml");
         visualTree.CloneTree(root);
 
-        var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/GamePIx's BT/USS/BehaviourTreeEditor.uss");
+        var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/GamePIxBT/USS/BehaviourTreeEditor.uss");
         root.styleSheets.Add(styleSheet);
 
         treeView = root.Q<BehaviourTreeView>();
@@ -108,48 +108,58 @@ public class BehaviourTreeEditor : EditorWindow
 
     private void OnSelectionChange()
     {
-        BehaviourTree tree = Selection.activeObject as BehaviourTree;
-
-        if(!tree)
+        EditorApplication.delayCall += () =>
         {
-            if(Selection.activeObject)
+            BehaviourTree tree = Selection.activeObject as BehaviourTree;
+
+            if (!tree)
             {
-                // 현재 선택중인 게임오브젝트에서 컴포넌트를 가져온다
-                BehaviourTreeRunner runner = Selection.activeGameObject.GetComponent<BehaviourTreeRunner>();
-            
-                // 컴포넌트가 존재하면
-                if(runner)
+                if (Selection.activeObject)
                 {
-                    //트리를 해당 오브젝트의 트리로 바꾼다.
-                    tree = runner.tree;
+                    try
+                    {
+                        // 현재 선택중인 게임오브젝트에서 컴포넌트를 가져온다
+                        BehaviourTreeRunner runner = Selection.activeGameObject.GetComponent<BehaviourTreeRunner>();
+
+                        // 컴포넌트가 존재하면
+                        if (runner)
+                        {
+                            //트리를 해당 오브젝트의 트리로 바꾼다.
+                            tree = runner.tree;
+                        }
+                    }
+                    catch
+                    {
+
+                    }
+                   
                 }
             }
-        }
 
-        // 유니티에서 게임이 실행중이라면
-        if(Application.isPlaying)
-        {
-            // Behaviour tree editor 창에 띄운다.
-            if(tree)
+            // 유니티에서 게임이 실행중이라면
+            if (Application.isPlaying)
             {
-                treeView.PopulateView(tree);
+                // Behaviour tree editor 창에 띄운다.
+                if (tree)
+                {
+                    treeView.PopulateView(tree);
+                }
             }
-        }
-        else
-        {
-            if (tree && AssetDatabase.CanOpenAssetInEditor(tree.GetInstanceID()))
+            else
             {
-                // treeView 창 열기
-                treeView.PopulateView(tree);
+                if (tree && AssetDatabase.CanOpenAssetInEditor(tree.GetInstanceID()))
+                {
+                    // treeView 창 열기
+                    treeView.PopulateView(tree);
+                }
             }
-        }
 
-        if (tree != null)
-        {
-            treeObject = new SerializedObject(tree);
-            blackboardProperty = treeObject.FindProperty("blackboard");
-        }
-
+            if (tree != null)
+            {
+                treeObject = new SerializedObject(tree);
+                blackboardProperty = treeObject.FindProperty("blackboard");
+            }
+        };
     }
 
     // 선택한 노드가 바뀌면 인스펙터뷰를 업데이트
