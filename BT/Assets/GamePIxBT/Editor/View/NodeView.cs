@@ -18,7 +18,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
 
     public Port input;
     public Port output;
-    public NodeView(Node node) : base("Assets/GamePIx's BT/USS/NodeView.uxml")
+    public NodeView(Node node) : base("Assets/GamePIxBT/USS/NodeView.uxml")
     {
         this.node = node;
         this.title = node.name;
@@ -34,6 +34,9 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
 
         // 노드 색상 설정
         SetupClasses();
+
+        // 노드 이미지 설정
+        SetupNodeClasses();
 
         Label descriptionLabel = this.Q<Label>("description");
         descriptionLabel.bindingPath = "description";
@@ -58,6 +61,30 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         else if (node is RootNode)
         {
             AddToClassList("root");
+        }
+    }
+
+    private void SetupNodeClasses()
+    {
+        if (node is DebugLogNode)
+        {
+            AddToClassList("DebugLogNode");
+        }
+        else if (node is WaitNode)
+        { 
+            AddToClassList("WaitNode");
+        }
+        else if (node is SequenceNode)
+        {
+            AddToClassList("SequenceNode");
+        }
+        else if (node is RootNode)
+        {
+            AddToClassList("RootNode");
+        }
+        else if(node is RepeatNode)
+        {
+            AddToClassList("RepeatNode");
         }
     }
 

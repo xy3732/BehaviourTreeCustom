@@ -120,7 +120,7 @@ public class BehaviourTree : ScriptableObject
     }
 
     // 노드 별 자식값을 반환
-    public List<Node> GetChildren(Node parent)
+    public static List<Node> GetChildren(Node parent)
     {
         List<Node> children = new List<Node>();
 
@@ -147,12 +147,11 @@ public class BehaviourTree : ScriptableObject
 #endif
     #endregion
 
-    public void Traverse(Node node, System.Action<Node> visiter)
+    public static void Traverse(Node node, System.Action<Node> visiter)
     {
         if(node)
         {
             visiter.Invoke(node);
-
             var children = GetChildren(node);
             children.ForEach((n) => Traverse(n, visiter));
         }
@@ -173,10 +172,11 @@ public class BehaviourTree : ScriptableObject
         return tree;
     }
 
-    public void Bind()
+    public void Bind(Container container)
     {
         Traverse(rootNode, (n) => 
         {
+            n.container = container;
             n.blackboard = blackboard;
         });
     }

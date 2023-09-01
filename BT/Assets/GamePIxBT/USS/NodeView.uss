@@ -20,6 +20,9 @@
 
 #output {
     align-items: center;
+    height: auto;
+    max-height: none;
+    min-height: auto;
 }
 
 #selection-border {
@@ -147,4 +150,64 @@
     border-bottom-left-radius: 5px;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
+}
+
+.RootNode #node-Image {
+    background-image: url('project://database/Assets/GamePIxBT/Sprite/RootImage.png?fileID=21300000&guid=dd25ffc5f2f226945aaed12ca615446c&type=3#RootImage');
+    height: 16px;
+    width: 16px;
+    max-width: 16px;
+    max-height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    left: 5px;
+    top: 5px;
+}
+
+.DebugLogNode #node-Image {
+    background-image: url('project://database/Assets/GamePIxBT/Sprite/DebugImage.png?fileID=21300000&guid=4769237bfc274e249b6441f165780c70&type=3#DebugImage');
+    left: 5px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    max-width: 16px;
+    max-height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+}
+
+.WaitNode #node-Image {
+    width: 16px;
+    height: 16px;
+    max-width: 16px;
+    max-height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    left: 5px;
+    top: 5px;
+    background-image: url('project://database/Assets/GamePIxBT/Sprite/WaitImage.png?fileID=21300000&guid=aca15049c8d9f6546adda0a2bdb2c7f0&type=3#WaitImage');
+}
+
+.RepeatNode #node-Image {
+    left: 5px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    max-width: 16px;
+    max-height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    background-image: url('project://database/Assets/GamePIxBT/Sprite/RepeatImage.png?fileID=21300000&guid=7d7e05d874526e0438353da8796ca1bf&type=3#RepeatImage');
+}
+
+.SequenceNode #node-Image {
+    left: 5px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    max-width: 16px;
+    min-width: 16px;
+    max-height: 16px;
+    min-height: 16px;
+    background-image: url('project://database/Assets/GamePIxBT/Sprite/SequenceImage.png?fileID=21300000&guid=e92843d2f044a83458244355a5f1ca95&type=3#SequenceImage');
 }

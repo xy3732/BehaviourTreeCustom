@@ -15,9 +15,8 @@ public class BehaviourTreeView : GraphView
     // UI ToolKit - Library에 해당 스크립트로 만든 스타일 생성 [Project 내부에 있음]
     public new class UxmlFactory : UxmlFactory<BehaviourTreeView, GraphView.UxmlTraits> { }
 
-    public Action<NodeView> OnNodeSelected;
-
     BehaviourTree tree;
+    public Action<NodeView> OnNodeSelected;
 
     public BehaviourTreeView()
     {
@@ -27,11 +26,12 @@ public class BehaviourTreeView : GraphView
         // 이벤트 추가 
         this.AddManipulator(new ContentZoomer());
         this.AddManipulator(new ContentDragger());
+        this.AddManipulator(new DoubleClickSelection());        // selectionDragger 보다 위에 있을것
         this.AddManipulator(new SelectionDragger());
         this.AddManipulator(new RectangleSelector());
 
         // uss 스타일 
-        var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/GamePIx's BT/USS/BehaviourTreeEditor.uss");
+        var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/GamePIxBT/USS/BehaviourTreeEditor.uss");
         styleSheets.Add(styleSheet);
 
         // ctrl + z, ctrl + y (Action)
@@ -44,7 +44,7 @@ public class BehaviourTreeView : GraphView
         AssetDatabase.SaveAssets();
     }
 
-    NodeView FindNodeView(Node node)
+    public NodeView FindNodeView(Node node)
     {
         return GetNodeByGuid(node.guid) as NodeView;
     }
@@ -73,7 +73,7 @@ public class BehaviourTreeView : GraphView
         // Tree에 있는 Node리스트 내부에 있는 Edge 리스트를 이용하여 생성
         tree.nodes.ForEach((n) => 
         {
-            var children = tree.GetChildren(n);
+            var children = BehaviourTree.GetChildren(n);
 
             children.ForEach(c => 
             {
@@ -145,9 +145,10 @@ public class BehaviourTreeView : GraphView
     }
 
     // 그리드뷰에 노드 생성
-    void CreateNode(System.Type type)
+    void CreateNode(System.Type type, Vector2 pos)
     {
         Node node = tree.CreateNode(type);
+        node.position = pos;
 
         CreateNodeView(node);
     }
@@ -174,40 +175,19 @@ public class BehaviourTreeView : GraphView
     // 마우스 오른쪽클릭 해서 뜨는 Context Menu
     public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
     {
-        {
-            var types = TypeCache.GetTypesDerivedFrom<ActionNode>();
+        Vector2 mousePos = this.ChangeCoordinatesTo(contentViewContainer, evt.localMousePosition);
 
-            foreach (var type in types)
+        TypeCache.TypeCollection types = TypeCache.GetTypesDerivedFrom<Node>();
+
+        foreach (Type type in types)
+        {
+            if (type.IsAbstract) continue;
+
+            evt.menu.AppendAction($"{type.BaseType.Name}/{type.Name}", (a) =>
             {
-                evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) =>
-                {
-                    CreateNode(type);
-                });
-            }
+                CreateNode(type, mousePos);
+            });
         }
 
-        {
-            var types = TypeCache.GetTypesDerivedFrom<CompositeNode>();
-
-            foreach (var type in types)
-            {
-                evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) =>
-                {
-                    CreateNode(type);
-                });
-            }
-        }
-
-        {
-            var types = TypeCache.GetTypesDerivedFrom<DecoratorNode>();
-
-            foreach (var type in types)
-            {
-                evt.menu.AppendAction($"[{type.BaseType.Name}] {type.Name}", (a) =>
-                {
-                    CreateNode(type);
-                });
-            }
-        }
     }
 }
