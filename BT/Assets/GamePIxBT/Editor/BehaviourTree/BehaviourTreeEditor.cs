@@ -15,7 +15,8 @@ public class BehaviourTreeEditor : EditorWindow
     BehaviourTreeView treeView;
     InspectorView inspectorView;
     IMGUIContainer blackboardView;
-
+    ToolbarButton savetoolButton;
+    VisualElement overlay;
 
     SerializedObject treeObject;
     SerializedProperty blackboardProperty;
@@ -55,14 +56,24 @@ public class BehaviourTreeEditor : EditorWindow
 
         treeView = root.Q<BehaviourTreeView>();
         inspectorView = root.Q<InspectorView>();
-        blackboardView = root.Q<IMGUIContainer>();
+        savetoolButton = root.Q<ToolbarButton>("SaveToolbar");
 
+        overlay = root.Q<VisualElement>("Overlay");
+
+        // Tree Editor의 Save를 누르면 해당 트리 저장.
+        savetoolButton.clicked += () => SaveTree();
+
+        blackboardView = root.Q<IMGUIContainer>();
         blackboardView.onGUIHandler = () =>
          {
              // 트리오브젝트 가 없으면 BehaviourTreeEditor창을 열때 버그가 걸린다.
              // 해당 오브젝트가 없으면 실행 안되게 바꾼다.
-             if(treeObject != null)
+             // 타겟 오브젝트도 없으면 에러 뜬다.
+             if(treeObject != null && treeObject.targetObject != null)
              {
+                 // 선택된 트리가 없을시 overlay 띄우기
+                 overlay.style.visibility = Visibility.Hidden;
+
                  treeObject.Update();
                  EditorGUILayout.PropertyField(blackboardProperty);
                  treeObject.ApplyModifiedProperties();
@@ -83,6 +94,7 @@ public class BehaviourTreeEditor : EditorWindow
 
     private void OnDisable()
     {
+        SaveTree();
         EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
     }
 
@@ -173,5 +185,14 @@ public class BehaviourTreeEditor : EditorWindow
     private void OnInspectorUpdate()
     {
         treeView?.UpdateNodeStates();
+    }
+
+    // 선택된 트리가 있고 유니티가 플레이 모드가 아닐시 저장 가능.
+    private void SaveTree()
+    {
+        if (treeObject == null && !Application.isPlaying) return;
+
+        Debug.Log("saved");
+        AssetDatabase.SaveAssets();
     }
 }
