@@ -1,30 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8161833819468031246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8576fc512b36c0a458e3e17425523308, type: 3}
-  m_Name: SequenceNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 3ae62bd41fb7aaa41b8eb6ed0f5b47f9
-  position: {x: 0, y: 243}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-  description: 
-  children:
-  - {fileID: 5053210113122028977}
-  - {fileID: -1985766068067381673}
-  - {fileID: -4999356049416336810}
-  - {fileID: 6587744921863282741}
---- !u!114 &-4999356049416336810
+--- !u!114 &-7589254740015638940
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: 085c54c289a9ae54d99a88fee587e276
-  position: {x: 158, y: 406}
+  guid: e74396b3e0e8e534095ee778e02a5395
+  position: {x: 137.91002, y: 385.00006}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-  description: delay debug 3second
-  message: delay debug 3second
---- !u!114 &-1985766068067381673
+  description: Wait 5 second to next sequence
+  message: 
+--- !u!114 &-7367555710699891413
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -53,17 +29,67 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 033847031569721408824ea19936c27b, type: 3}
-  m_Name: MoveTo3Node
+  m_Script: {fileID: 11500000, guid: 62abb417471732c4e9a90010a4a40970, type: 3}
+  m_Name: RandomVector3Node
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: b2170a7dee723254e84884abd7ef1e6b
-  position: {x: -158, y: 406}
+  guid: 2e6baa63dc8f9db4c8b69c99a4bca8ed
+  position: {x: -323.35007, y: 385}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-  description: move to Blackboard pos
---- !u!114 &-659347845657139038
+  description: 
+  min: {x: -10, y: -10, z: -10}
+  max: {x: 10, y: 10, z: 10}
+--- !u!114 &-5402535428271115008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8576fc512b36c0a458e3e17425523308, type: 3}
+  m_Name: SequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: cbfef02c502ef144485b56f8a7bed318
+  position: {x: 0, y: 231}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 
+  children:
+  - {fileID: -7589254740015638940}
+  - {fileID: 8737713598421488943}
+  - {fileID: 5103877076914779012}
+  - {fileID: -7367555710699891413}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29c4fc3c8794f454e9b2f2d68611b580, type: 3}
+  m_Name: New Behaviour Tree
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: 8180472247411460219}
+  treeState: 0
+  nodes:
+  - {fileID: 8180472247411460219}
+  - {fileID: -5402535428271115008}
+  - {fileID: 4377037267381134579}
+  - {fileID: -7589254740015638940}
+  - {fileID: -7367555710699891413}
+  - {fileID: 5103877076914779012}
+  - {fileID: 8737713598421488943}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &4377037267381134579
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,13 +103,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: 0d6660a1555cc334e82af2a55d63f8a7
-  position: {x: 0, y: 132}
+  guid: 65f57a5edfbb0f24f9521eb98634522f
+  position: {x: 0, y: 119}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
-  child: {fileID: -8161833819468031246}
---- !u!114 &11400000
+  child: {fileID: -5402535428271115008}
+--- !u!114 &5103877076914779012
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,43 +118,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29c4fc3c8794f454e9b2f2d68611b580, type: 3}
-  m_Name: New Behaviour Tree
+  m_Script: {fileID: 11500000, guid: 033847031569721408824ea19936c27b, type: 3}
+  m_Name: MoveTo3Node
   m_EditorClassIdentifier: 
-  rootNode: {fileID: 6137726281277433851}
-  treeState: 0
-  nodes:
-  - {fileID: 6137726281277433851}
-  - {fileID: -4999356049416336810}
-  - {fileID: -8161833819468031246}
-  - {fileID: -659347845657139038}
-  - {fileID: 5053210113122028977}
-  - {fileID: -1985766068067381673}
-  - {fileID: 6587744921863282741}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
---- !u!114 &5053210113122028977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: RandomVector3Node
-  m_EditorClassIdentifier: Assembly-CSharp::RandomVector3Node
   state: 0
   started: 0
-  guid: c276da0daac001843802a21a6d53daf7
-  position: {x: -316, y: 406}
+  guid: 7a5fc2b509f78a24cbca28868aece7ed
+  position: {x: -165.35004, y: 385}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-  description: Random position in -10~10
-  min: {x: -10, y: -10, z: -10}
-  max: {x: 10, y: 10, z: 10}
---- !u!114 &6137726281277433851
+  description: move to position
+--- !u!114 &8180472247411460219
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,13 +142,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: b5a01c416d89abc4685d1490c36151ad
+  guid: 4e60f5ae47cab0d4f93e13a64804f212
   position: {x: 0, y: 0}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
-  child: {fileID: -659347845657139038}
---- !u!114 &6587744921863282741
+  child: {fileID: 4377037267381134579}
+--- !u!114 &8737713598421488943
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,9 +162,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: c3307fa1c6dc4d144835c5cb2da18b62
-  position: {x: 316, y: 406}
+  guid: 055c023880e114740ab6d332555defd7
+  position: {x: 296.00003, y: 385.00006}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
-  description: 
-  duration: 3
+  description: wait 5 second
+  duration: 5
