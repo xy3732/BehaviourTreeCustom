@@ -33,7 +33,6 @@ public class SequenceNode : CompositeNode
                 current++;
                 break;
         }
-        Debug.Log(current);
 
         // 현재 실행중인 노드의 번째가 자식의 마지막 번째와 같은경우 성공 반환,
         // 아니라면 실행중으로 반환.

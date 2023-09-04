@@ -75,14 +75,15 @@ public class BehaviourTreeView : GraphView
         {
             var children = BehaviourTree.GetChildren(n);
 
-            children.ForEach(c => 
+            foreach (var c in children)
             {
                 NodeView parentView = FindNodeView(n);
                 NodeView childView = FindNodeView(c);
 
                 Edge edge = parentView.output.ConnectTo(childView.input);
                 AddElement(edge);
-            });
+            }
+
         });
     }
 

@@ -62,6 +62,10 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         {
             AddToClassList("root");
         }
+        else if(node is ConditionNode) //6B5CA5
+        {
+            AddToClassList("condition");
+        }
     }
 
     private void SetupNodeClasses()
@@ -144,6 +148,10 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         {
             input = InstantiatePort(Orientation.Vertical, Direction.Input, Port.Capacity.Single, typeof(bool));    
         }
+        else if (node is ConditionNode)
+        {
+            input = InstantiatePort(Orientation.Vertical, Direction.Input, Port.Capacity.Single, typeof(bool));
+        }
         else if(node is CompositeNode)
         {
             input = InstantiatePort(Orientation.Vertical, Direction.Input, Port.Capacity.Single, typeof(bool));
@@ -173,6 +181,10 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         if (node is ActionNode)
         {
            
+        }
+        else if(node is ConditionNode)
+        {
+
         }
         else if (node is CompositeNode)
         {

@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 범위내에 무언가가 있을때 실행되는 ActionNode
 /// </summary>
-public class InRangeNode : ActionNode
+public class InRangeNode : ConditionNode
 {
     protected override void OnStart()
     {

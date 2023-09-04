@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class LimitLoopNode : CompositeNode
 {
-
+    public int count;
+   
     protected override void OnStart()
     {
 
@@ -17,6 +18,13 @@ public class LimitLoopNode : CompositeNode
 
     protected override State OnUpdate()
     {
-        throw new System.NotImplementedException();
+        bool isStillLoop = false;
+
+        for(int i= 0; i<count; ++i)
+        {
+            isStillLoop = true;
+        }
+
+        return isStillLoop ? State.Running : State.Success;
     }
 }
