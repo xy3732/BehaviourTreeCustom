@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 하위 노드중에 State가 Failure인 노드를 실행하지 않고 다음 노드를 실행하는 CompositeNode
 /// </summary>
-public class TrueSelector : CompositeNode
+public class TrueSelectorNode : CompositeNode
 {
     int current;
     protected override void OnStart()

@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 91ae5f4a34d6e824b85c08ec8b8ad278
-  position: {x: 169.69829, y: 565.494}
+  position: {x: 127, y: 599}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -36,11 +36,11 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 6b99af5fc800b194ba4b32a25d931a36
-  position: {x: 25.999973, y: 129.5175}
+  position: {x: 6.4500046, y: 74.80003}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
-  child: {fileID: 7980258672561074070}
+  child: {fileID: 789077534321951935}
 --- !u!114 &-4510072270724518689
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,7 +80,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f923a977a542c0143a8eeb037e542b3c
-  position: {x: 488.69827, y: 565.494}
+  position: {x: 446, y: 599}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -100,7 +100,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d81b15c5b4603a74eb90e78bbbc72466
-  position: {x: -265.30173, y: 568.494}
+  position: {x: -270, y: 599}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -121,7 +121,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 485fbe5ffadaa7a4cbb2b40a6fd0c5cc
-  position: {x: 646.6983, y: 565.494}
+  position: {x: 604, y: 599}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -177,7 +177,7 @@ MonoBehaviour:
   - {fileID: -1205455526423568277}
   - {fileID: -2330430683617812694}
   - {fileID: 4854932238815681827}
-  - {fileID: 7980258672561074070}
+  - {fileID: 789077534321951935}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &667447903181842574
@@ -195,11 +195,33 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d020a94d3d0b85e42ab2f38680a8813a
-  position: {x: 327.6982, y: 565.494}
+  position: {x: 285, y: 599}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   speed: 2
+--- !u!114 &789077534321951935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c047f889640b61e48ba5665788c68c66, type: 3}
+  m_Name: TrueSelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 60ac8038f64528444afdb10c81a197d0
+  position: {x: 6.4500046, y: 222.80006}
+  blackboard:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 
+  children:
+  - {fileID: -1205455526423568277}
+  - {fileID: -4510072270724518689}
 --- !u!114 &1599421036374842830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +237,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: c0450f52fbd769344b9f9604b29ae360
-  position: {x: -423.30176, y: 568.494}
+  position: {x: -428, y: 599}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: Something in
@@ -234,7 +256,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 2b812f7222c1cfd499f9203c749a6ab6
-  position: {x: -107.30174, y: 568.494}
+  position: {x: -112, y: 599}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -254,7 +276,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 010b0ee8e0bc3cd48bccb6eb9de1147f
-  position: {x: -581.3017, y: 568.494}
+  position: {x: -586, y: 599}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: its object
@@ -274,30 +296,8 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 3ec6c168adc96594bbb3c69b037b6f3d
-  position: {x: 26.185596, y: -1.3225076}
+  position: {x: 6.4500046, y: -56.199966}
   blackboard:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   child: {fileID: -4890558755462333412}
---- !u!114 &7980258672561074070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c047f889640b61e48ba5665788c68c66, type: 3}
-  m_Name: TrueSelector
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 10eb21245308d204b8eb4e145c9a5e2f
-  position: {x: 26, y: 284}
-  blackboard:
-    moveToPosition: {x: 0, y: 0, z: 0}
-  description: 
-  children:
-  - {fileID: -1205455526423568277}
-  - {fileID: -4510072270724518689}

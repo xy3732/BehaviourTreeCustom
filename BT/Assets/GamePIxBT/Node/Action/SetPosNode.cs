@@ -16,7 +16,7 @@ public class SetVector3Node : ActionNode
 
     protected override State OnUpdate()
     {
-        container.transform.position = new Vector3(blackboard.moveToPosition.x, blackboard.moveToPosition.y, blackboard.moveToPosition.z);
+        container.transform.position = new Vector3(btContainer.moveToPosition.x, btContainer.moveToPosition.y, btContainer.moveToPosition.z);
 
         return State.Success;
     }

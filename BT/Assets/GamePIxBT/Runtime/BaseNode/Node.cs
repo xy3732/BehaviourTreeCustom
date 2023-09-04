@@ -16,7 +16,7 @@ public abstract class Node : ScriptableObject
     [HideInInspector] public bool started = false;
     [HideInInspector] public string guid;
     [HideInInspector] public Vector2 position;
-    [HideInInspector] public BlackBoard blackboard;
+    [HideInInspector] public BTContainer btContainer;
     [HideInInspector] public Container container;
 
     // 현재 노드의 설명문 작성 가능

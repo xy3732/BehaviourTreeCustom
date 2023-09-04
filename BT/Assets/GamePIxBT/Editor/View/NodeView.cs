@@ -86,6 +86,22 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         {
             AddToClassList("RepeatNode");
         }
+        else if(node is TrueSelectorNode)
+        {
+            AddToClassList("TrueSelectorNode");
+        }
+        else if(node is MoveTo3Node)
+        {
+            AddToClassList("MoveToPosNode");
+        }
+        else if(node is InRangeNode)
+        {
+            AddToClassList("InRangeNode");
+        }
+        else if(node is RandomVector3Node)
+        {
+            AddToClassList("RandomNode");
+        }
     }
 
     // 개별 노드의 실행 확인

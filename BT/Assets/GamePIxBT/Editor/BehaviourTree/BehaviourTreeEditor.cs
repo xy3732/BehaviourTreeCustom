@@ -170,7 +170,7 @@ public class BehaviourTreeEditor : EditorWindow
             if (tree != null)
             {
                 treeObject = new SerializedObject(tree);
-                blackboardProperty = treeObject.FindProperty("blackboard");
+                blackboardProperty = treeObject.FindProperty("btContainer");
             }
         };
     }
