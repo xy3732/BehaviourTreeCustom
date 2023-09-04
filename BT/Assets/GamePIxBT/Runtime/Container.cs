@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Container 
 {
-    public Rigidbody2D rigidbody2D;
-    public Transform transform;
+    [HideInInspector] public Rigidbody2D rigidbody2D;
+    [HideInInspector] public Transform transform;
 
     public static Container CreateFromGameObject(GameObject gameObject)
     {
