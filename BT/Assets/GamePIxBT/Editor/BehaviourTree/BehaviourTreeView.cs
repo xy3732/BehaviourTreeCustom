@@ -15,7 +15,7 @@ public class BehaviourTreeView : GraphView
     // UI ToolKit - Library에 해당 스크립트로 만든 스타일 생성 [Project 내부에 있음]
     public new class UxmlFactory : UxmlFactory<BehaviourTreeView, GraphView.UxmlTraits> { }
 
-    BehaviourTree tree;
+    public BehaviourTree tree;
     public Action<NodeView> OnNodeSelected;
 
     public BehaviourTreeView()

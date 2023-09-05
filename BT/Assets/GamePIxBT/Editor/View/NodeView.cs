@@ -10,6 +10,9 @@ using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 #endif
 
+/// <summary>
+/// BehaviourTreeEditor ¿¡¼­ Node
+/// </summary>
 public class NodeView : UnityEditor.Experimental.GraphView.Node
 {
     public Action<NodeView> OnNodeSelected;

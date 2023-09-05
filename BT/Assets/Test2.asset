@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 91ae5f4a34d6e824b85c08ec8b8ad278
-  position: {x: 211, y: 587}
+  position: {x: 213.99998, y: 587}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: set 0 Pos
@@ -36,7 +36,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 6b99af5fc800b194ba4b32a25d931a36
-  position: {x: 17, y: 119}
+  position: {x: 17.000103, y: 133}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -160,6 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c4fc3c8794f454e9b2f2d68611b580, type: 3}
   m_Name: Test2
   m_EditorClassIdentifier: 
+  behaviourTreeType: 0
   rootNode: {fileID: 7704136657008749922}
   treeState: 0
   nodes:
@@ -235,7 +236,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 2b812f7222c1cfd499f9203c749a6ab6
-  position: {x: -112, y: 599}
+  position: {x: -111.999985, y: 599}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: Move to Position
@@ -276,7 +277,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 3ec6c168adc96594bbb3c69b037b6f3d
-  position: {x: 17, y: -12}
+  position: {x: 16.99994, y: 17.257492}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
