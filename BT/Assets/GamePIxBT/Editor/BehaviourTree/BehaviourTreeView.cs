@@ -177,6 +177,11 @@ public class BehaviourTreeView : GraphView
         {
             NodeView view = n as NodeView;
             view.UpdateState();
+
+            if (view.ClassListContains("success") || view.ClassListContains("failure")) view.style.color = new Color(0.4f, 0.4f, 0.4f);
+            else if (view.ClassListContains("running")) view.style.color = new StyleColor(new Color32(255, 193, 0, 255));
+            else view.style.color = new Color(0.8f, 0.8f, 0.8f);
+
         });
 
         edges.ForEach((e) => 
@@ -191,12 +196,12 @@ public class BehaviourTreeView : GraphView
             if (input.ClassListContains("running") && output.ClassListContains("running"))
             {
                 e.AddToClassList("running-Edge");
+                e.style.color = new StyleColor(new Color32(255, 193, 0, 255));
             }
             else
             {
                 e.AddToClassList("default-Edge");
-                
-                Debug.Log(e.selectedColor);
+                e.style.color = new Color(0.9f, 0.9f, 0.9f);
             }
         });
 

@@ -269,5 +269,22 @@
 }
 
 .default-Edge #EdgeLine {
-    background-color: rgba(120, 120, 120, 255);
+    background-color: rgb(120, 120, 120);
+}
+
+.running #description {
+    margin-left: 30px;
+    width: 150px;
+    align-items: center;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    flex-grow: 1;
+}
+
+.running #title {
+    font-size: 14px;
+    -unity-font-style: bold;
+    -unity-text-align: upper-center;
 }
