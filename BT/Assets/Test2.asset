@@ -36,7 +36,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 6b99af5fc800b194ba4b32a25d931a36
-  position: {x: 16.999937, y: 130.19254}
+  position: {x: 17, y: 114}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -56,7 +56,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 839d6ffc77eae734b97a5de7e87fe91f
-  position: {x: 371.99997, y: 422.1925}
+  position: {x: 372.00003, y: 422.00003}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: Move Node [always true]
@@ -139,7 +139,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 2ce061d275cc9964fac95323978103a2
-  position: {x: -335.00003, y: 422.1925}
+  position: {x: -349, y: 422.00003}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 'if InRange something return true '
@@ -214,7 +214,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 60ac8038f64528444afdb10c81a197d0
-  position: {x: 16.999992, y: 262.15005}
+  position: {x: 16.99998, y: 250}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: select Only True
@@ -277,7 +277,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 3ec6c168adc96594bbb3c69b037b6f3d
-  position: {x: 16.999977, y: 17.00003}
+  position: {x: 16.999977, y: -0.87001324}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 

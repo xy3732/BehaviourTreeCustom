@@ -18,11 +18,12 @@ public class BehaviourTreeView : GraphView
     public BehaviourTree tree;
     public Action<NodeView> OnNodeSelected;
 
+
     public BehaviourTreeView()
     {
         // 그리드 배경 추가
         Insert(0, new GridBackground());
-
+        
         // 이벤트 추가 
         this.AddManipulator(new ContentZoomer());
         this.AddManipulator(new ContentDragger());
@@ -70,10 +71,10 @@ public class BehaviourTreeView : GraphView
         tree.nodes.ForEach((n) => CreateNodeView(n));
 
         // Edge 생성
-        // Tree에 있는 Node리스트 내부에 있는 Edge 리스트를 이용하여 생성
-        tree.nodes.ForEach((n) => CreateEdgeView(n));
+        tree.nodes.ForEach((e) => CreateEdgeView(e));
     }
 
+    // Edge를 Grid뷰에 생성
     void CreateEdgeView(Node node)
     {
         var children = BehaviourTree.GetChildren(node);
@@ -84,7 +85,7 @@ public class BehaviourTreeView : GraphView
             NodeView childView = FindNodeView(child);
 
             Edge edge = parentView.output.ConnectTo(childView.input);
-            //edge.AddToClassList("default-Edge");
+            edge.name = "EdgeLine";
 
             AddElement(edge);
         }
@@ -110,6 +111,7 @@ public class BehaviourTreeView : GraphView
     // 그리그뷰 바뀌면 업데이트
     private GraphViewChange OngGraphViewChanged(GraphViewChange graphViewChange)
     {
+        // 그레프에서 무언가가 제거 되면 실행
         if(graphViewChange.elementsToRemove != null)
         {
             graphViewChange.elementsToRemove.ForEach((e) => 
@@ -133,6 +135,7 @@ public class BehaviourTreeView : GraphView
             });
         }
 
+        // 그레프에서 Edge생성 되면 실행
         if(graphViewChange.edgesToCreate != null)
         {
             // 노드에 있는 리스트에 Edge 데이터 추가.
@@ -174,6 +177,27 @@ public class BehaviourTreeView : GraphView
         {
             NodeView view = n as NodeView;
             view.UpdateState();
+        });
+
+        edges.ForEach((e) => 
+        {
+            NodeView input = e.input.node as NodeView;
+            NodeView output = e.output.node as NodeView;
+
+            e.RemoveFromClassList("running-Edge");
+            e.RemoveFromClassList("default-Edge");
+
+
+            if (input.ClassListContains("running") && output.ClassListContains("running"))
+            {
+                e.AddToClassList("running-Edge");
+            }
+            else
+            {
+                e.AddToClassList("default-Edge");
+                
+                Debug.Log(e.selectedColor);
+            }
         });
 
     }

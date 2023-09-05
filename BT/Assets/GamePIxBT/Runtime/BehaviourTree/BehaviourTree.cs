@@ -31,6 +31,7 @@ public class BehaviourTree : ScriptableObject
     // Node 积己
     public Node CreateNode(System.Type type)
     {
+        
         // Node 积己 单捞磐 
         Node node = ScriptableObject.CreateInstance(type) as Node;
         node.name = type.Name;

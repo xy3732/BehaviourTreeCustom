@@ -9,8 +9,6 @@ using UnityEditor.UIElements;
 using UnityEditor.Callbacks;
 #endif
 
-
-
 public class BehaviourTreeEditor : EditorWindow
 {
     BehaviourTreeView treeView;

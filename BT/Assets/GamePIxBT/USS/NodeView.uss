@@ -267,3 +267,7 @@
     min-height: 16px;
     background-image: url('project://database/Assets/GamePIxBT/Sprite/Random.png?fileID=21300000&guid=9f0849d75ac18434ca313e2d385d39e3&type=3#Random');
 }
+
+.default-Edge #EdgeLine {
+    background-color: rgba(120, 120, 120, 255);
+}
