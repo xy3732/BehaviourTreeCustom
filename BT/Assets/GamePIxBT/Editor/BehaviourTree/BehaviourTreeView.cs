@@ -71,22 +71,34 @@ public class BehaviourTreeView : GraphView
 
         // Edge 생성
         // Tree에 있는 Node리스트 내부에 있는 Edge 리스트를 이용하여 생성
-        tree.nodes.ForEach((n) => 
-        {
-            var children = BehaviourTree.GetChildren(n);
-
-            foreach (var c in children)
-            {
-                NodeView parentView = FindNodeView(n);
-                NodeView childView = FindNodeView(c);
-
-                Edge edge = parentView.output.ConnectTo(childView.input);
-                
-                AddElement(edge);
-            }
-
-        });
+        tree.nodes.ForEach((n) => CreateEdgeView(n));
     }
+
+    void CreateEdgeView(Node node)
+    {
+        var children = BehaviourTree.GetChildren(node);
+
+        foreach (var child in children)
+        {
+            NodeView parentView = FindNodeView(node);
+            NodeView childView = FindNodeView(child);
+
+            Edge edge = parentView.output.ConnectTo(childView.input);
+            //edge.AddToClassList("default-Edge");
+
+            AddElement(edge);
+        }
+    }
+
+    // Node를 Grid뷰에 생성
+    void CreateNodeView(Node node)
+    {
+        NodeView nodeView = new NodeView(node);
+        nodeView.OnNodeSelected = OnNodeSelected;
+
+        AddElement(nodeView);
+    }
+
 
     public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
     {
@@ -155,15 +167,6 @@ public class BehaviourTreeView : GraphView
         CreateNodeView(node);
     }
 
-    // Node를 Grid뷰에 생성
-    void CreateNodeView(Node node)
-    {
-        NodeView nodeView = new NodeView(node);
-        nodeView.OnNodeSelected = OnNodeSelected;
-
-        AddElement(nodeView);
-    }
-
     // 노드의 작동 State값을 업데이트 한다.
     public void UpdateNodeStates()
     {
@@ -172,6 +175,7 @@ public class BehaviourTreeView : GraphView
             NodeView view = n as NodeView;
             view.UpdateState();
         });
+
     }
 
     // 마우스 오른쪽클릭 해서 뜨는 Context Menu

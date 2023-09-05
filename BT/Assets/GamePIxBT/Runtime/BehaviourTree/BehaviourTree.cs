@@ -11,7 +11,7 @@ public class BehaviourTree : ScriptableObject
 {
     // BehaviourTree¿« ≈∏¿‘
     public BehaviourTreeType behaviourTreeType;
-
+    
     [Space()]
     public Node rootNode;
     public Node.State treeState = Node.State.Running;
