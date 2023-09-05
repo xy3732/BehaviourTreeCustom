@@ -81,6 +81,7 @@ public class BehaviourTreeView : GraphView
                 NodeView childView = FindNodeView(c);
 
                 Edge edge = parentView.output.ConnectTo(childView.input);
+                
                 AddElement(edge);
             }
 

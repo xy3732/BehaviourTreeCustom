@@ -205,7 +205,7 @@ public class BehaviourTreeEditor : EditorWindow
         var behaviourTrees = LoadAssets<BehaviourTree>();
         behaviourTrees.ForEach((t) =>
         {
-            toolbarMenu.menu.AppendAction($"{t.behaviourTreeType}/{t.name}", (a) =>
+            toolbarMenu.menu.AppendAction($"BehaviourTreeTypes/{t.behaviourTreeType}/{t.name}", (a) =>
             {
                 // 툴바 Asset에 있는거 클릭시 activeobject로 설정
                 Selection.activeObject = t;

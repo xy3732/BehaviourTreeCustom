@@ -41,10 +41,7 @@ public class BehaviourTree : ScriptableObject
         // 리스트에 저장
         nodes.Add(node);
 
-        if(Application.isPlaying)
-        {
-            AssetDatabase.AddObjectToAsset(node, this);
-        }
+        if(Application.isPlaying) AssetDatabase.AddObjectToAsset(node, this);
 
         // 데이터 저장
         AssetDatabase.AddObjectToAsset(node, this);
