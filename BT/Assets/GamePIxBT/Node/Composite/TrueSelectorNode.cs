@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SequenceNode : CompositeNode
+/// <summary>
+/// 하위 노드중에 State가 Failure인 노드를 실행하지 않고 다음 노드를 실행하는 CompositeNode
+/// </summary>
+public class TrueSelectorNode : CompositeNode
 {
     int current;
-
     protected override void OnStart()
     {
         current = 0;
@@ -13,23 +15,25 @@ public class SequenceNode : CompositeNode
 
     protected override void OnStop()
     {
-
+        
     }
 
     protected override State OnUpdate()
     {
         // 현재 current번째에 있는 자식 노드를 가져오기.
-        // 결과적으로 순서대로 실행이 안된 노드를 가져와서 실행 시킨다.
+        // 결과적으로 순서대로 실행이 안된 노드를 가져와서 실행이된다.
         var child = children[current];
 
         switch (child.Update())
         {
             case State.Running:
                 return State.Running;
-            case State.Failure:
-                return State.Failure;
-                // 만약 이미 실행한 노드 이면 current 증가.
+
             case State.Success:
+                return State.Success;
+
+                // 만약 실패한 노드 이면 패스.
+            case State.Failure:
                 current++;
                 break;
         }

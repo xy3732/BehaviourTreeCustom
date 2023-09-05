@@ -2,8 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// [ Unity 3D ] Blackboard의 movePosition의 좌표까지 이동하는 ActionNode.
+/// </summary>
 public class MoveTo3Node : ActionNode
 {
+    // [todo] container 에서 설정된 값 받기.
+    public float speed;
+    public bool isStopAble = false;
+
     protected override void OnStart()
     {
     }
@@ -14,16 +21,18 @@ public class MoveTo3Node : ActionNode
 
     protected override State OnUpdate()
     {
+        if (isStopAble && container.isStopMove) return State.Success;
+
         Vector3 dir;
         Quaternion lookTarget;
 
-        dir = blackboard.moveToPosition - container.transform.position;
+        dir = btContainer.moveToPosition - container.transform.position;
         lookTarget = Quaternion.LookRotation(dir);
 
-        container.transform.position += dir.normalized * Time.deltaTime * 2f;
+        container.transform.position += dir.normalized * Time.deltaTime * speed;
         container.transform.rotation = Quaternion.Lerp(container.transform.rotation, lookTarget, 0.25f);
 
-        if((container.transform.position - blackboard.moveToPosition).magnitude < 1f)
+        if((container.transform.position - btContainer.moveToPosition).magnitude < 1f)
         {
             return State.Success;
         }

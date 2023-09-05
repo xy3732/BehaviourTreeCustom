@@ -2,25 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+///  [ DEBUG ] 해당 노드가 실행되는지 확인하는용.
+/// </summary>
 public class DebugLogNode : ActionNode
 {
     public string message;
 
     protected override void OnStart()
     {
-        Debug.Log($"OnStart : {message}");
-    }
 
-    protected override State OnUpdate()
-    {
-        Debug.Log($"OnUpdate : {message}");
-
-        return State.Success;
     }
 
     protected override void OnStop()
     {
-        Debug.Log($"OnStop : {message}");
+
+    }
+
+    protected override State OnUpdate()
+    {
+        Debug.Log($"{message}");
+
+        return State.Success;
     }
 
 }

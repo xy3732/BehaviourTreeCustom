@@ -102,21 +102,29 @@
     -unity-text-align: upper-left;
 }
 
-.action #input {
+.action #divider {
     background-color: rgb(76, 224, 179);
+    min-height: 2.5px;
 }
 
-.composite #input {
+.composite #divider {
     background-color: rgb(255, 193, 0);
+    min-height: 2.5px;
 }
 
-.decorator #input {
+.decorator #divider {
     background-color: rgb(74, 143, 231);
+    min-height: 2.5px;
 }
 
-.root #input {
+.condition #divider {
+    min-height: 2.5px;
+    background-color: rgba(107, 92, 165, 255);
+}
+
+.root #divider {
     background-color: rgb(217, 93, 57);
-    min-height: 20px;
+    min-height: 2.5px;
 }
 
 #node-state {
@@ -128,28 +136,28 @@
     background-color: rgba(0, 0, 0, 0);
 }
 
-.success #node-state {
-    background-color: rgba(51, 229, 63, 0.69);
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+.success #input {
+    background-color: rgba(108, 231, 116, 0.69);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
-.running #node-state {
-    background-color: rgb(255, 170, 0);
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+.running #input {
+    background-color: rgb(245, 202, 54);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
-.failure #node-state {
+.failure #input {
     background-color: rgb(255, 59, 59);
-    border-top-left-radius: 5px;
-    border-bottom-left-radius: 5px;
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
 }
 
 .RootNode #node-Image {
@@ -210,4 +218,52 @@
     max-height: 16px;
     min-height: 16px;
     background-image: url('project://database/Assets/GamePIxBT/Sprite/SequenceImage.png?fileID=21300000&guid=e92843d2f044a83458244355a5f1ca95&type=3#SequenceImage');
+}
+
+.TrueSelectorNode #node-Image {
+    left: 5px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    max-width: 16px;
+    max-height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    background-image: url('project://database/Assets/GamePIxBT/Sprite/TrueSelector.png?fileID=21300000&guid=ebb310d50c3d3404f8ad69d1c13a7494&type=3#TrueSelector');
+}
+
+.MoveToPosNode #node-Image {
+    left: 5px;
+    top: 5px;
+    height: 16px;
+    width: 16px;
+    max-width: 16px;
+    max-height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    background-image: url('project://database/Assets/GamePIxBT/Sprite/MoveToPos.png?fileID=21300000&guid=f4600b7756e227d4e902e053237369bc&type=3#MoveToPos');
+}
+
+.InRangeNode #node-Image {
+    left: 5px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    max-width: 16px;
+    max-height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    background-image: url('project://database/Assets/GamePIxBT/Sprite/InRange.png?fileID=21300000&guid=56803b3d103d9bb409f972302b0ad4a6&type=3#InRange');
+}
+
+.RandomNode #node-Image {
+    left: 5px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    max-width: 16px;
+    max-height: 16px;
+    min-width: 16px;
+    min-height: 16px;
+    background-image: url('project://database/Assets/GamePIxBT/Sprite/Random.png?fileID=21300000&guid=9f0849d75ac18434ca313e2d385d39e3&type=3#Random');
 }

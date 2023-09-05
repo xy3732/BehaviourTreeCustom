@@ -7,6 +7,9 @@ public class Container
     [HideInInspector] public Rigidbody2D rigidbody2D;
     [HideInInspector] public Transform transform;
 
+    [HideInInspector] public bool isInrange = false;
+    [HideInInspector] public bool isStopMove = false;
+
     public static Container CreateFromGameObject(GameObject gameObject)
     {
         Container container = new Container();
