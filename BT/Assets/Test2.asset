@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 91ae5f4a34d6e824b85c08ec8b8ad278
-  position: {x: 211, y: 587}
+  position: {x: 214.00005, y: 584}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: set 0 Pos
@@ -36,7 +36,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 6b99af5fc800b194ba4b32a25d931a36
-  position: {x: 17, y: 119}
+  position: {x: 17, y: 114}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -56,7 +56,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 839d6ffc77eae734b97a5de7e87fe91f
-  position: {x: 372, y: 425}
+  position: {x: 372.00003, y: 422.00003}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: Move Node [always true]
@@ -79,7 +79,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 6576277d4ee69bb46aa23ae3f51cd75a
-  position: {x: -586.00006, y: 599}
+  position: {x: -586.00006, y: 596.1925}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: is hit other obejct
@@ -98,7 +98,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f923a977a542c0143a8eeb037e542b3c
-  position: {x: 530, y: 587}
+  position: {x: 529.99994, y: 584.1925}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: Debug Log to Console
@@ -118,7 +118,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d81b15c5b4603a74eb90e78bbbc72466
-  position: {x: -270, y: 599}
+  position: {x: -270.00006, y: 596.1925}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: Random Range -10 ~ 10
@@ -139,7 +139,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 2ce061d275cc9964fac95323978103a2
-  position: {x: -334.87454, y: 425}
+  position: {x: -349, y: 422.00003}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 'if InRange something return true '
@@ -160,6 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29c4fc3c8794f454e9b2f2d68611b580, type: 3}
   m_Name: Test2
   m_EditorClassIdentifier: 
+  behaviourTreeType: 0
   rootNode: {fileID: 7704136657008749922}
   treeState: 0
   nodes:
@@ -192,7 +193,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d020a94d3d0b85e42ab2f38680a8813a
-  position: {x: 372, y: 587}
+  position: {x: 372.00006, y: 584}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: Move to Position
@@ -213,7 +214,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 60ac8038f64528444afdb10c81a197d0
-  position: {x: 17, y: 267}
+  position: {x: 16.99998, y: 250}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: select Only True
@@ -235,7 +236,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 2b812f7222c1cfd499f9203c749a6ab6
-  position: {x: -112, y: 599}
+  position: {x: -112.00003, y: 596.1925}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: Move to Position
@@ -256,7 +257,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 010b0ee8e0bc3cd48bccb6eb9de1147f
-  position: {x: -428, y: 599}
+  position: {x: -428.00003, y: 596.1925}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: its object
@@ -276,7 +277,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 3ec6c168adc96594bbb3c69b037b6f3d
-  position: {x: 17, y: -12}
+  position: {x: 16.999977, y: -0.87001324}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 

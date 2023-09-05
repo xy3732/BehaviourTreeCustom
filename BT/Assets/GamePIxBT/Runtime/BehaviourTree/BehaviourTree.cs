@@ -9,6 +9,10 @@ using UnityEditor;
 [CreateAssetMenu()]
 public class BehaviourTree : ScriptableObject
 {
+    // BehaviourTree의 타입
+    public BehaviourTreeType behaviourTreeType;
+    
+    [Space()]
     public Node rootNode;
     public Node.State treeState = Node.State.Running;
 
@@ -27,6 +31,7 @@ public class BehaviourTree : ScriptableObject
     // Node 생성
     public Node CreateNode(System.Type type)
     {
+        
         // Node 생성 데이터 
         Node node = ScriptableObject.CreateInstance(type) as Node;
         node.name = type.Name;
@@ -37,10 +42,7 @@ public class BehaviourTree : ScriptableObject
         // 리스트에 저장
         nodes.Add(node);
 
-        if(Application.isPlaying)
-        {
-            AssetDatabase.AddObjectToAsset(node, this);
-        }
+        if(Application.isPlaying) AssetDatabase.AddObjectToAsset(node, this);
 
         // 데이터 저장
         AssetDatabase.AddObjectToAsset(node, this);

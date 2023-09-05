@@ -4,26 +4,26 @@
         <uie:ToolbarMenu display-tooltip-when-elided="true" text="Assets" />
         <uie:ToolbarButton text="Save" display-tooltip-when-elided="true" name="SaveToolbar" />
     </uie:Toolbar>
-    <SplitView fixed-pane-initial-dimension="350">
-        <ui:VisualElement name="left-panel" style="width: 100px;">
+    <SplitView fixed-pane-initial-dimension="800">
+        <ui:VisualElement name="left-panel">
+            <ui:Label text="treeView" display-tooltip-when-elided="true" name="treeView-Label" style="background-color: rgb(37, 37, 37);" />
+            <BehaviourTreeView focusable="true" style="flex-grow: 1;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="right-panel" style="width: 100px;">
             <SplitView orientation="Vertical" fixed-pane-initial-dimension="300">
                 <ui:VisualElement name="inspector-container">
                     <ui:Label text="Insepctor" display-tooltip-when-elided="true" style="background-color: rgb(37, 37, 37);" />
                     <InspectorView />
                 </ui:VisualElement>
-                <ui:VisualElement name="blackboard-container">
-                    <ui:Label text="Behaviour&apos;s Container" display-tooltip-when-elided="true" style="background-color: rgb(37, 37, 37);" />
+                <ui:VisualElement name="behaviourTree-container">
+                    <ui:Label text="Behaviour&apos;s Container" display-tooltip-when-elided="true" name="BehaviourTreeContainer-Label" style="background-color: rgb(37, 37, 37);" />
                     <ui:IMGUIContainer />
                 </ui:VisualElement>
             </SplitView>
         </ui:VisualElement>
-        <ui:VisualElement name="right-panel">
-            <ui:Label text="treeView" display-tooltip-when-elided="true" style="background-color: rgb(37, 37, 37);" />
-            <BehaviourTreeView focusable="true" style="flex-grow: 1;" />
-        </ui:VisualElement>
     </SplitView>
     <ui:VisualElement name="Overlay" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.35);">
-        <ui:Label text="- DIDNT SELECT THE TREE -" display-tooltip-when-elided="true" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; -unity-text-align: middle-center; font-size: 24px; -unity-font: url(&apos;project://database/Library/unity%20default%20resources?fileID=10102&amp;guid=0000000000000000e000000000000000&amp;type=0#Arial&apos;); -unity-font-style: bold;" />
+        <ui:Label text="- DIDNT SELECT THE BEHAVIOUR TREE -" display-tooltip-when-elided="true" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; -unity-text-align: middle-center; font-size: 24px; -unity-font: url(&apos;project://database/Library/unity%20default%20resources?fileID=10102&amp;guid=0000000000000000e000000000000000&amp;type=0#Arial&apos;); -unity-font-style: bold;" />
         <ui:Label text="select the [BehaviourTree]Object or Include Gameobject to active Editor" display-tooltip-when-elided="true" style="position: absolute; left: 0; top: 0; right: 0; bottom: 0; -unity-text-align: middle-center; margin-left: 0; padding-top: 63px; font-size: 14px;" />
     </ui:VisualElement>
 </ui:UXML>

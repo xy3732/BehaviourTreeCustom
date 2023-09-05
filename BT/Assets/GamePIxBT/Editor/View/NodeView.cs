@@ -10,6 +10,9 @@ using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 #endif
 
+/// <summary>
+/// BehaviourTreeEditor 에서 Node
+/// </summary>
 public class NodeView : UnityEditor.Experimental.GraphView.Node
 {
     public Action<NodeView> OnNodeSelected;
@@ -62,7 +65,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         {
             AddToClassList("root");
         }
-        else if(node is ConditionNode) //6B5CA5
+        else if(node is ConditionNode) 
         {
             AddToClassList("condition");
         }
@@ -142,6 +145,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
     }
 
     // Input포트 생성
+    // Root를 제외한 Input 포트는 모두 단일로 설정한다.
     private void CreateInputPorts()
     {
         if(node is ActionNode)

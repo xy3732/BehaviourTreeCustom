@@ -1,7 +1,10 @@
-GridBackground
-{
-	--grid-background-color: rgb(40,40,40);
-	--line-color: rgba(0, 0, 0, 0.1)
-	--thick-line-color: rgba(0, 0, 0, 0.1);
-	--spacing: 15; 
-} 
+GridBackground {
+    --grid-background-color: rgb(40, 40, 40);
+    --line-color: rgba(0, 0, 0, 0.1) --thick-line-color rgba(0, 0, 0, 0.1);
+    --spacing: 15;
+}
+
+.default-Edge #EdgeLine {
+    --edge-color: rgb(0, 0, 1);
+    display: flex;
+}

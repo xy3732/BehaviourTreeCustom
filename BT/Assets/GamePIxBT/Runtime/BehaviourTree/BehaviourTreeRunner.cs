@@ -16,6 +16,7 @@ public class BehaviourTreeRunner : MonoBehaviour
         // 실행되면 트리 복사 해서 사용.
         tree = tree.Clone();
         tree.Bind(container);
+        
     }
 
     void Update()

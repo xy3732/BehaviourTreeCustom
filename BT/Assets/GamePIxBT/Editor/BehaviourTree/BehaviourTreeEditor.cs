@@ -1,25 +1,27 @@
-using UnityEditor;
+using System;
 using UnityEngine;
 using UnityEngine.UIElements;
-using System;
+using System.Collections.Generic;
 
 #if UNITY_EDITOR
+using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEditor.Callbacks;
 #endif
-
-
 
 public class BehaviourTreeEditor : EditorWindow
 {
     BehaviourTreeView treeView;
     InspectorView inspectorView;
-    IMGUIContainer blackboardView;
+    IMGUIContainer behaviourTreeContainerView;
+    Label treeViewLabel, behaviourTreeContainerLabel;
+    ToolbarMenu toolbarMenu;
     ToolbarButton savetoolButton;
     VisualElement overlay;
 
+    // Behaviour tree Container
     SerializedObject treeObject;
-    SerializedProperty blackboardProperty;
+    SerializedProperty behaviourProperty;
 
     [MenuItem("GamePix's BT/Editor")]
     public static void OpenWindow()
@@ -54,35 +56,50 @@ public class BehaviourTreeEditor : EditorWindow
         var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/GamePIxBT/USS/BehaviourTreeEditor.uss");
         root.styleSheets.Add(styleSheet);
 
-        treeView = root.Q<BehaviourTreeView>();
-        inspectorView = root.Q<InspectorView>();
-        savetoolButton = root.Q<ToolbarButton>("SaveToolbar");
-
-        overlay = root.Q<VisualElement>("Overlay");
+        // Init 설정
+        Setter(root);
 
         // Tree Editor의 Save를 누르면 해당 트리 저장.
         savetoolButton.clicked += () => SaveTree();
 
-        blackboardView = root.Q<IMGUIContainer>();
-        blackboardView.onGUIHandler = () =>
-         {
-             // 트리오브젝트 가 없으면 BehaviourTreeEditor창을 열때 버그가 걸린다.
-             // 해당 오브젝트가 없으면 실행 안되게 바꾼다.
-             // 타겟 오브젝트도 없으면 에러 뜬다.
-             if(treeObject != null && treeObject.targetObject != null)
-             {
-                 // 선택된 트리가 없을시 overlay 띄우기
-                 overlay.style.visibility = Visibility.Hidden;
+        // behaviour Tree Container 세팅
+        BehaviourTreeContainerSet(root);
 
-                 treeObject.Update();
-                 EditorGUILayout.PropertyField(blackboardProperty);
-                 treeObject.ApplyModifiedProperties();
-             }
-         };
+        // 툴바 메뉴 ["Asset"]버튼
+        ToolBarMenuSet(root);
 
         treeView.OnNodeSelected = OnNodeSelectionChanged;
 
         OnSelectionChange();
+    }
+    private void BehaviourTreeContainerSet(VisualElement root)
+    {
+        behaviourTreeContainerView.onGUIHandler = () =>
+        {
+            // 트리오브젝트 가 없으면 BehaviourTreeEditor창을 열때 버그가 걸린다.
+            // 해당 오브젝트가 없으면 실행 안되게 바꾼다.
+            // 타겟 오브젝트도 없으면 에러 뜬다.
+            if (treeObject != null && treeObject.targetObject != null)
+            {
+                // 선택된 트리가 없을시 overlay 띄우기
+                overlay.style.visibility = Visibility.Hidden;
+
+                treeObject.Update();
+                EditorGUILayout.PropertyField(behaviourProperty);
+                treeObject.ApplyModifiedProperties();
+            }
+        };
+    }
+
+    private void Setter(VisualElement root)
+    {
+        treeView = root.Q<BehaviourTreeView>();
+        inspectorView = root.Q<InspectorView>();
+        savetoolButton = root.Q<ToolbarButton>("SaveToolbar");
+        overlay = root.Q<VisualElement>("Overlay");
+        treeViewLabel = root.Q<Label>("treeView-Label");
+        behaviourTreeContainerLabel = root.Q<Label>("BehaviourTreeContainer-Label");
+        behaviourTreeContainerView = root.Q<IMGUIContainer>();
     }
 
     private void OnEnable()
@@ -127,8 +144,10 @@ public class BehaviourTreeEditor : EditorWindow
 
             if (!tree)
             {
+                // 현재 선택된 오브젝트가 있으면
                 if (Selection.activeObject)
                 {
+                    // 스크립트를 선택하면 Error가 뜬다. 
                     try
                     {
                         // 현재 선택중인 게임오브젝트에서 컴포넌트를 가져온다
@@ -145,7 +164,6 @@ public class BehaviourTreeEditor : EditorWindow
                     {
 
                     }
-                   
                 }
             }
 
@@ -167,12 +185,59 @@ public class BehaviourTreeEditor : EditorWindow
                 }
             }
 
+            // TreeView 위에있는 라벨의 이름을 바꾼다.
+            LabelNameChanger(tree);
+
+            // 트리가 null이 아닐시만 behaviour container에 값 띄우기
             if (tree != null)
             {
                 treeObject = new SerializedObject(tree);
-                blackboardProperty = treeObject.FindProperty("btContainer");
+                behaviourProperty = treeObject.FindProperty("btContainer");
             }
         };
+    }
+    private void ToolBarMenuSet(VisualElement root)
+    {
+        // 툴바 메뉴 ["Asset"]버튼
+        toolbarMenu = root.Q<ToolbarMenu>();
+        var behaviourTrees = LoadAssets<BehaviourTree>();
+        behaviourTrees.ForEach((t) =>
+        {
+            toolbarMenu.menu.AppendAction($"BehaviourTreeTypes/{t.behaviourTreeType}/{t.name}", (a) =>
+            {
+                // 툴바 Asset에 있는거 클릭시 activeobject로 설정
+                Selection.activeObject = t;
+            });
+        });
+        toolbarMenu.menu.AppendSeparator();
+    }
+
+    // TreeView 위에있는 라벨의 이름을 바꾼다.
+    private void LabelNameChanger(BehaviourTree tree)
+    {
+        if (tree == null) return;
+        // TreeView 위에있는 라벨의 이름을 바꾼다.
+        treeViewLabel.text = tree.name + " Tree View";
+        behaviourTreeContainerLabel.text = tree.name + "'s container";
+    }
+
+    private List<T> LoadAssets<T>() where T : UnityEngine.Object
+    {
+        // 타입 : t: , "t:type" 특정 type 검색, 모든 에셋은 t:Object 으로 검색
+        string[] assetIDs = AssetDatabase.FindAssets($"t:{typeof(T).Name}");
+        // 찾은 모든 에셋을 임시로 저장 하는 리스트
+        List<T> assets = new List<T>();
+
+        foreach (var assetID in assetIDs)
+        {
+            //에셋 검색 후 로드
+            string path = AssetDatabase.GUIDToAssetPath(assetID);
+            T asset = AssetDatabase.LoadAssetAtPath<T>(path);
+
+            assets.Add(asset);
+        }
+
+        return assets;
     }
 
     // 선택한 노드가 바뀌면 인스펙터뷰를 업데이트

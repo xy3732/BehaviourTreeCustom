@@ -15,14 +15,15 @@ public class BehaviourTreeView : GraphView
     // UI ToolKit - Library에 해당 스크립트로 만든 스타일 생성 [Project 내부에 있음]
     public new class UxmlFactory : UxmlFactory<BehaviourTreeView, GraphView.UxmlTraits> { }
 
-    BehaviourTree tree;
+    public BehaviourTree tree;
     public Action<NodeView> OnNodeSelected;
+
 
     public BehaviourTreeView()
     {
         // 그리드 배경 추가
         Insert(0, new GridBackground());
-
+        
         // 이벤트 추가 
         this.AddManipulator(new ContentZoomer());
         this.AddManipulator(new ContentDragger());
@@ -70,22 +71,35 @@ public class BehaviourTreeView : GraphView
         tree.nodes.ForEach((n) => CreateNodeView(n));
 
         // Edge 생성
-        // Tree에 있는 Node리스트 내부에 있는 Edge 리스트를 이용하여 생성
-        tree.nodes.ForEach((n) => 
-        {
-            var children = BehaviourTree.GetChildren(n);
-
-            foreach (var c in children)
-            {
-                NodeView parentView = FindNodeView(n);
-                NodeView childView = FindNodeView(c);
-
-                Edge edge = parentView.output.ConnectTo(childView.input);
-                AddElement(edge);
-            }
-
-        });
+        tree.nodes.ForEach((e) => CreateEdgeView(e));
     }
+
+    // Edge를 Grid뷰에 생성
+    void CreateEdgeView(Node node)
+    {
+        var children = BehaviourTree.GetChildren(node);
+
+        foreach (var child in children)
+        {
+            NodeView parentView = FindNodeView(node);
+            NodeView childView = FindNodeView(child);
+
+            Edge edge = parentView.output.ConnectTo(childView.input);
+            edge.name = "EdgeLine";
+
+            AddElement(edge);
+        }
+    }
+
+    // Node를 Grid뷰에 생성
+    void CreateNodeView(Node node)
+    {
+        NodeView nodeView = new NodeView(node);
+        nodeView.OnNodeSelected = OnNodeSelected;
+
+        AddElement(nodeView);
+    }
+
 
     public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
     {
@@ -97,6 +111,7 @@ public class BehaviourTreeView : GraphView
     // 그리그뷰 바뀌면 업데이트
     private GraphViewChange OngGraphViewChanged(GraphViewChange graphViewChange)
     {
+        // 그레프에서 무언가가 제거 되면 실행
         if(graphViewChange.elementsToRemove != null)
         {
             graphViewChange.elementsToRemove.ForEach((e) => 
@@ -120,6 +135,7 @@ public class BehaviourTreeView : GraphView
             });
         }
 
+        // 그레프에서 Edge생성 되면 실행
         if(graphViewChange.edgesToCreate != null)
         {
             // 노드에 있는 리스트에 Edge 데이터 추가.
@@ -154,23 +170,44 @@ public class BehaviourTreeView : GraphView
         CreateNodeView(node);
     }
 
-    // Node를 Grid뷰에 생성
-    void CreateNodeView(Node node)
-    {
-        NodeView nodeView = new NodeView(node);
-        nodeView.OnNodeSelected = OnNodeSelected;
-
-        AddElement(nodeView);
-    }
-
     // 노드의 작동 State값을 업데이트 한다.
     public void UpdateNodeStates()
     {
+
+        // nodes 플레이모드 일떄 Update State 별로 컬러 설정 [완]
         nodes.ForEach((n) => 
         {
             NodeView view = n as NodeView;
             view.UpdateState();
+
+            if (view.ClassListContains("success") || view.ClassListContains("failure")) view.style.color = new Color(0.4f, 0.4f, 0.4f);
+            else if (view.ClassListContains("running")) view.style.color = new StyleColor(new Color32(255, 193, 0, 255));
+            else view.style.color = new Color(0.8f, 0.8f, 0.8f);
+
         });
+
+        // Edges 플레이모드 일때 Update State 별로 컬러 설정 [미완]
+        edges.ForEach((e) => 
+        {
+            NodeView input = e.input.node as NodeView;
+            NodeView output = e.output.node as NodeView;
+
+            e.RemoveFromClassList("running-Edge");
+            e.RemoveFromClassList("default-Edge");
+
+
+            if (input.ClassListContains("running") && output.ClassListContains("running"))
+            {
+                e.AddToClassList("running-Edge");
+                e.style.color = new StyleColor(new Color32(255, 193, 0, 255));
+            }
+            else
+            {
+                e.AddToClassList("default-Edge");
+                e.style.color = new Color(0.9f, 0.9f, 0.9f);
+            }
+        });
+
     }
 
     // 마우스 오른쪽클릭 해서 뜨는 Context Menu
