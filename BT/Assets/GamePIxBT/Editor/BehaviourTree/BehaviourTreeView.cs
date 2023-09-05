@@ -173,6 +173,8 @@ public class BehaviourTreeView : GraphView
     // 노드의 작동 State값을 업데이트 한다.
     public void UpdateNodeStates()
     {
+
+        // nodes 플레이모드 일떄 Update State 별로 컬러 설정 [완]
         nodes.ForEach((n) => 
         {
             NodeView view = n as NodeView;
@@ -184,6 +186,7 @@ public class BehaviourTreeView : GraphView
 
         });
 
+        // Edges 플레이모드 일때 Update State 별로 컬러 설정 [미완]
         edges.ForEach((e) => 
         {
             NodeView input = e.input.node as NodeView;
