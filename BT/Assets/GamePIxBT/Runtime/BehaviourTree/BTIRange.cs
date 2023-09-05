@@ -12,11 +12,13 @@ public class BTIRange : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        container.isStopMove = true;
         container.isInrange = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
+        container.isStopMove = false;
         container.isInrange = false;
     }
 }

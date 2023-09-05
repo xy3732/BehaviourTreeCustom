@@ -9,6 +9,7 @@ public class MoveTo3Node : ActionNode
 {
     // [todo] container 에서 설정된 값 받기.
     public float speed;
+    public bool isStopAble = false;
 
     protected override void OnStart()
     {
@@ -20,6 +21,8 @@ public class MoveTo3Node : ActionNode
 
     protected override State OnUpdate()
     {
+        if (isStopAble && container.isStopMove) return State.Success;
+
         Vector3 dir;
         Quaternion lookTarget;
 
