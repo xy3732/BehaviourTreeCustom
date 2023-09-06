@@ -38,9 +38,9 @@ MonoBehaviour:
   position: {x: 0, y: 299}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
-  description: 
+  description: 2
   child: {fileID: -7455711664884971938}
-  script: 2
+  script: second script
   alreadyRead: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -99,10 +99,10 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f691893f94e61db449600662d2cb0f1a
-  position: {x: 0, y: 163}
+  position: {x: 0.00001001358, y: 159.55002}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
-  description: 
+  description: 1
   child: {fileID: -3528456226147998263}
-  script: 1
+  script: this is first script of this obejct
   alreadyRead: 0

@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class ScriptEndNode : ActionNode
 {
-    public bool alreadyRead = false;
+    public BehaviourTreeType nodeType = BehaviourTreeType.script;
 
+    public bool alreadyRead = false;
+    
     protected override void OnStart()
     {
-
-        Debug.Log($"Start {this.name}");
+        // 나중에 disable로 설정할것
+        UIManager.instance.setText("");
     }
 
     protected override void OnStop()
     {
-        Debug.Log($"Stop {this.name}");
+
     }
 
     protected override State OnUpdate()
