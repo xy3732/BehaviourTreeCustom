@@ -10,6 +10,10 @@ public class Container
     [HideInInspector] public bool isInrange = false;
     [HideInInspector] public bool isStopMove = false;
 
+    // Script Only
+    [HideInInspector] public string textScript;
+    [HideInInspector] public bool isScriptTriger = false;
+
     public static Container CreateFromGameObject(GameObject gameObject)
     {
         Container container = new Container();

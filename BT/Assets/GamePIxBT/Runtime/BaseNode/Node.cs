@@ -40,6 +40,7 @@ public abstract class Node : ScriptableObject
             started = false;
         }
 
+
         // 현재의 state를 반환한다.
         return state;
     }

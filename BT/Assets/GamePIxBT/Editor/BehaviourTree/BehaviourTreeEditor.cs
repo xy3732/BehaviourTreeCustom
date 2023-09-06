@@ -111,6 +111,8 @@ public class BehaviourTreeEditor : EditorWindow
 
     private void OnDisable()
     {
+        if (Application.isPlaying) return;
+
         SaveTree();
         EditorApplication.playModeStateChanged -= OnPlayModeStateChanged;
     }
@@ -257,7 +259,6 @@ public class BehaviourTreeEditor : EditorWindow
     {
         if (treeObject == null && !Application.isPlaying) return;
 
-        Debug.Log("saved");
         AssetDatabase.SaveAssets();
     }
 }

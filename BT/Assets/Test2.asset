@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 91ae5f4a34d6e824b85c08ec8b8ad278
-  position: {x: 214.00005, y: 584}
+  position: {x: 293, y: 596.00006}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: set 0 Pos
@@ -63,7 +63,6 @@ MonoBehaviour:
   children:
   - {fileID: -7509038246074724113}
   - {fileID: 667447903181842574}
-  - {fileID: -2460891237202324906}
 --- !u!114 &-3793310398598916330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,26 +82,6 @@ MonoBehaviour:
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: is hit other obejct
---- !u!114 &-2460891237202324906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71690e2d59a46134fac160f8d10a2418, type: 3}
-  m_Name: DebugLogNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: f923a977a542c0143a8eeb037e542b3c
-  position: {x: 529.99994, y: 584.1925}
-  btContainer:
-    moveToPosition: {x: 0, y: 0, z: 0}
-  description: Debug Log to Console
-  message: debug log controll
 --- !u!114 &-2330430683617812694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +144,6 @@ MonoBehaviour:
   treeState: 0
   nodes:
   - {fileID: 7704136657008749922}
-  - {fileID: -2460891237202324906}
   - {fileID: -7509038246074724113}
   - {fileID: 667447903181842574}
   - {fileID: -4890558755462333412}
@@ -193,7 +171,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d020a94d3d0b85e42ab2f38680a8813a
-  position: {x: 372.00006, y: 584}
+  position: {x: 451, y: 596.00006}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: Move to Position

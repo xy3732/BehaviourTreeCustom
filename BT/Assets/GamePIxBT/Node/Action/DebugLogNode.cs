@@ -7,7 +7,7 @@ using UnityEngine;
 /// </summary>
 public class DebugLogNode : ActionNode
 {
-    public string message;
+    [TextArea(4,2)]public string message;
 
     protected override void OnStart()
     {
