@@ -187,6 +187,7 @@ public class BehaviourTreeView : GraphView
         });
 
         // Edges 플레이모드 일때 Update State 별로 컬러 설정 [미완]
+        /*
         edges.ForEach((e) => 
         {
             NodeView input = e.input.node as NodeView;
@@ -207,12 +208,14 @@ public class BehaviourTreeView : GraphView
                 e.style.color = new Color(0.9f, 0.9f, 0.9f);
             }
         });
-
+        */
     }
 
     // 마우스 오른쪽클릭 해서 뜨는 Context Menu
     public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
     {
+        Debug.Log(tree.behaviourTreeType);
+
         Vector2 mousePos = this.ChangeCoordinatesTo(contentViewContainer, evt.localMousePosition);
 
         TypeCache.TypeCollection types = TypeCache.GetTypesDerivedFrom<Node>();

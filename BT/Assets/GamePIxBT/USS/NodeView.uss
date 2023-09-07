@@ -127,6 +127,10 @@
     min-height: 2.5px;
 }
 
+.root #input {
+    min-height: 20px;
+}
+
 #node-state {
     position: absolute;
     left: 0;

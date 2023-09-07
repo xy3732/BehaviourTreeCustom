@@ -27,6 +27,12 @@ public class BehaviourTreeRunner : MonoBehaviour
         }
     }
 
+    public void ScriptTriger()
+    {
+        container.isScriptTriger = true;
+    }
+
+
     Container CreateBehaviourTreeContext()
     {
         return Container.CreateFromGameObject(gameObject);
