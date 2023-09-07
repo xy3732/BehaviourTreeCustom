@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ScriptNode : DecoratorNode
 {
-    public BehaviourTreeType nodeType = BehaviourTreeType.script;
+    BehaviourTreeType nodeType = BehaviourTreeType.script;
 
     [TextArea(4, 2)] public string script;
     public bool alreadyRead = false;
