@@ -13,6 +13,7 @@ public class Container
     // Script Only
     [HideInInspector] public string textScript;
     [HideInInspector] public bool isScriptTriger = false;
+    [HideInInspector] public int buttonSelectNumber = -1;
 
     public static Container CreateFromGameObject(GameObject gameObject)
     {

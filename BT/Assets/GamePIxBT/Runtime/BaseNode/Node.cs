@@ -21,6 +21,9 @@ public abstract class Node : ScriptableObject
 
     // 현재 노드의 설명문 작성 가능
     [TextArea(2,4)] public string description;
+
+    // Script Only
+    public int selectNode = 0;
     public State Update()
     {
         // 해당 노드가 처음 실행 될떄 Onstart를 실행

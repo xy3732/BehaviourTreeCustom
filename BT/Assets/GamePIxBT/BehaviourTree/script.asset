@@ -1,27 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8881965648402939372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db82afd985e19d542b7720a183042dab, type: 3}
-  m_Name: ScriptTrueSelectorNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: c14a7e741a6a9ea4a8701d431b2f4c62
-  position: {x: -9, y: 147}
-  btContainer:
-    moveToPosition: {x: 0, y: 0, z: 0}
-  description: 
-  children:
-  - {fileID: 5425737342509342752}
-  - {fileID: -3528456226147998263}
 --- !u!114 &-7455711664884971938
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37,13 +15,14 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 65d68131baaacb442acab6f20175545c
-  position: {x: 158.00003, y: 472.25046}
+  position: {x: 0.000030517578, y: 444.3225}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
+  selectNode: 0
   nodeType: 1
   alreadyRead: 0
---- !u!114 &-3528456226147998263
+--- !u!114 &-5334285929567914742
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,13 +36,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: 283358fb35be9e7468677b981a6e4de7
-  position: {x: 158.00003, y: 323.2505}
+  guid: 6e61746e764c0f34882b280fbd5586f7
+  position: {x: 0.00004196167, y: -6.606369}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
-  description: 2
-  child: {fileID: -7455711664884971938}
-  script: second script
+  description: select the node
+  selectNode: 0
+  child: {fileID: 4690546011179870550}
+  script: select the node
+  alreadyRead: 0
+--- !u!114 &-3679598596443553998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449728e7d30792549904d07cebdd4628, type: 3}
+  m_Name: ScriptEndNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ed6266954f954de46962654998faa6f7
+  position: {x: 166.99997, y: 445.00003}
+  btContainer:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 
+  selectNode: 0
+  nodeType: 1
   alreadyRead: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -82,13 +84,39 @@ MonoBehaviour:
   treeState: 0
   nodes:
   - {fileID: 3768986575803770624}
-  - {fileID: -3528456226147998263}
-  - {fileID: 5425737342509342752}
   - {fileID: -7455711664884971938}
-  - {fileID: -8881965648402939372}
   - {fileID: 5427379441296893724}
+  - {fileID: 2711067805567916458}
+  - {fileID: 7988439208666546115}
+  - {fileID: -5334285929567914742}
+  - {fileID: 8108264417154644456}
+  - {fileID: -3679598596443553998}
+  - {fileID: 4690546011179870550}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &2711067805567916458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af14886abe9b92d46b571732b36c9c36, type: 3}
+  m_Name: ScriptNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: dfefcd8f4cd674f4fb5f8c61ed256833
+  position: {x: -167.00002, y: 305}
+  btContainer:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 1
+  selectNode: 0
+  child: {fileID: 5427379441296893724}
+  script: select First
+  alreadyRead: 0
 --- !u!114 &3768986575803770624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,12 +132,13 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: d48c92b4ca1ac5544b735bbf0fe55990
-  position: {x: 0, y: 0}
+  position: {x: 0.00004196167, y: -158.18219}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
-  child: {fileID: -8881965648402939372}
---- !u!114 &5425737342509342752
+  selectNode: 0
+  child: {fileID: -5334285929567914742}
+--- !u!114 &4690546011179870550
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,19 +147,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af14886abe9b92d46b571732b36c9c36, type: 3}
-  m_Name: ScriptNode
+  m_Script: {fileID: 11500000, guid: db82afd985e19d542b7720a183042dab, type: 3}
+  m_Name: ScriptSequenceNode
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: f691893f94e61db449600662d2cb0f1a
-  position: {x: -157.99995, y: 323.2505}
+  guid: ebc101e48d7b7164b926b6241cddc517
+  position: {x: 0, y: 141.65}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
-  description: 1
-  child: {fileID: 5427379441296893724}
-  script: this is first script of this obejct
-  alreadyRead: 0
+  description: 
+  selectNode: 0
+  children:
+  - {fileID: 2711067805567916458}
+  - {fileID: 7988439208666546115}
+  - {fileID: 8108264417154644456}
 --- !u!114 &5427379441296893724
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,9 +177,56 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a10ca6cee6f29a74e9aba34acec41b6b
-  position: {x: -157.99995, y: 472.25046}
+  position: {x: -167.00002, y: 444}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
+  selectNode: 0
   nodeType: 1
+  alreadyRead: 0
+--- !u!114 &7988439208666546115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af14886abe9b92d46b571732b36c9c36, type: 3}
+  m_Name: ScriptNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: b5df53d9ada72b74a932aa79e70d4f03
+  position: {x: 0, y: 305}
+  btContainer:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 2
+  selectNode: 0
+  child: {fileID: -7455711664884971938}
+  script: select second
+  alreadyRead: 0
+--- !u!114 &8108264417154644456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af14886abe9b92d46b571732b36c9c36, type: 3}
+  m_Name: ScriptNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: c727357c12352c84a82316523182e485
+  position: {x: 167.00002, y: 305}
+  btContainer:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 3
+  selectNode: 0
+  child: {fileID: -3679598596443553998}
+  script: select third
   alreadyRead: 0
