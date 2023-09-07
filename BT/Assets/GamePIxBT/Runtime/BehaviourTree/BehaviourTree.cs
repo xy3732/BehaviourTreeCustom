@@ -91,6 +91,14 @@ public class BehaviourTree : ScriptableObject
             composite.children.Add(child);
             EditorUtility.SetDirty(composite);
         }
+
+        ConfluenceNode confluence = parent as ConfluenceNode;
+        if(confluence)
+        {
+            Undo.RecordObject(confluence, "Behaviour Tree (AddChild)");
+            confluence.child = child;
+            EditorUtility.SetDirty(confluence);
+        }
     }
 
     // 노드 끼리 만들어진 부모자식 상속 관계를 삭제한다.
@@ -110,6 +118,14 @@ public class BehaviourTree : ScriptableObject
             Undo.RecordObject(decorator, "Behaviour Tree (RemoveChild)");
             decorator.child = null;
             EditorUtility.SetDirty(decorator);
+        }
+
+        ConfluenceNode confluence = parent as ConfluenceNode;
+        if (confluence)
+        {
+            Undo.RecordObject(confluence, "Behaviour Tree (RemoveChild)");
+            confluence.child = null;
+            EditorUtility.SetDirty(confluence);
         }
 
         CompositeNode composite = parent as CompositeNode;
@@ -136,6 +152,12 @@ public class BehaviourTree : ScriptableObject
         if (decorator && decorator.child != null)
         {
             children.Add(decorator.child);
+        }
+
+        ConfluenceNode confluence = parent as ConfluenceNode;
+        if (confluence && confluence.child != null)
+        {
+            children.Add(confluence.child);
         }
 
         CompositeNode composite = parent as CompositeNode;

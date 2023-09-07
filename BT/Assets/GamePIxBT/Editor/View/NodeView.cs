@@ -69,6 +69,10 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         {
             AddToClassList("condition");
         }
+        else if(node is ConfluenceNode)
+        {
+            AddToClassList("confluence");
+        }
     }
 
     private void SetupNodeClasses()
@@ -84,6 +88,10 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         else if (node is SequenceNode)
         {
             AddToClassList("SequenceNode");
+        }
+        else if (node is ConfluenceNode)
+        {
+            AddToClassList("confluenceNode");
         }
         else if (node is RootNode)
         {
@@ -145,7 +153,8 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
     }
 
     // Input포트 생성
-    // Root를 제외한 Input 포트는 모두 단일로 설정한다.
+    // Root를 제외한 모드 노드는 포트를 가지고 있다.
+    // Confluence노드를 제외한 모든 노드는 단일 포트를 가지고 있다.
     private void CreateInputPorts()
     {
         if(node is ActionNode)
@@ -163,6 +172,10 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         else if(node is DecoratorNode)
         {
             input = InstantiatePort(Orientation.Vertical, Direction.Input, Port.Capacity.Single, typeof(bool));
+        }
+        else if(node is ConfluenceNode)
+        {
+            input = InstantiatePort(Orientation.Vertical, Direction.Input, Port.Capacity.Multi, typeof(bool));
         }
         else if(node is RootNode)
         {
@@ -202,6 +215,11 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         {
             output = InstantiatePort(Orientation.Vertical, Direction.Output, Port.Capacity.Single, typeof(bool));
         }
+        else if(node is ConfluenceNode)
+        {
+            output = InstantiatePort(Orientation.Vertical, Direction.Output, Port.Capacity.Single, typeof(bool));
+        }
+
 
 
         if (output != null)
