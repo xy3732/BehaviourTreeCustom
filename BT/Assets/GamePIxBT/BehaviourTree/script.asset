@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f343b76686918094d9cf57897158fb67
-  position: {x: -167.00002, y: 588.45}
+  position: {x: -166.99994, y: 588}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -24,6 +24,7 @@ MonoBehaviour:
   children:
   - {fileID: -2863052744416558205}
   - {fileID: 3515097443058369509}
+  selectNumber: -1
 --- !u!114 &-5334285929567914742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -234,7 +235,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ebc101e48d7b7164b926b6241cddc517
-  position: {x: 0, y: 141.65}
+  position: {x: -0.00001168251, y: 140.6775}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 1
@@ -244,6 +245,7 @@ MonoBehaviour:
   - {fileID: 2711067805567916458}
   - {fileID: 7988439208666546115}
   - {fileID: 8108264417154644456}
+  selectNumber: -1
 --- !u!114 &5427379441296893724
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ public class MergeNode : ConfluenceNode
 
     protected override State OnUpdate()
     {
+        Debug.Log("update");
         child.Update();
 
         return State.Running;

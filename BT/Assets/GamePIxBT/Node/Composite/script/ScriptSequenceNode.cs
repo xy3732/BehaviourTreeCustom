@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScriptSequenceNode : CompositeNode
 {
 
-    int selectNumber = -1;
+    public int selectNumber = -1;
     protected override void OnStart()
     {
         // 컨테이너에 있는 버튼선택값을 -1로 초기화
@@ -28,12 +28,12 @@ public class ScriptSequenceNode : CompositeNode
     {
         if (alreadySelected)
         {
-            children[selectNode].Update();
+            children[selectNumber].Update();
         }
         else
         {
             // 버튼선택값이 없으면 실행 안되게 설정
-            if (container.buttonSelectNumber != -1)
+            if (container.buttonSelectNumber != -1 && !alreadySelected)
             {
                 //버튼선택값이 -1이 아니라면
                 for (int i = 0; i < children.Count; i++)
