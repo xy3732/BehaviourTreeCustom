@@ -55,6 +55,7 @@ public class UIManager : MonoBehaviour
             {
                 // 버튼 이벤트
                 clickSelectBtn(selectNumber, container);
+                clearButtons();
             });
 
             //리스트에 추가

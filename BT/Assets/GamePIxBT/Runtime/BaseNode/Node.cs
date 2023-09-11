@@ -21,7 +21,7 @@ public abstract class Node : ScriptableObject
 
     // 현재 노드의 설명문 작성 가능
     [TextArea(2,4)] public string description;
-
+    public bool alreadySelected = false;
     // Script Only
     public int selectNode = 0;
     public State Update()

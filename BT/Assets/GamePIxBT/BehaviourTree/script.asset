@@ -19,9 +19,34 @@ MonoBehaviour:
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
+  alreadySelected: 0
   selectNode: 0
   nodeType: 1
   alreadyRead: 0
+--- !u!114 &-7451543758228538188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db82afd985e19d542b7720a183042dab, type: 3}
+  m_Name: ScriptSequenceNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f343b76686918094d9cf57897158fb67
+  position: {x: -167.00002, y: 588.45}
+  btContainer:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  children:
+  - {fileID: -2863052744416558205}
+  - {fileID: 3515097443058369509}
 --- !u!114 &-5334285929567914742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,6 +66,7 @@ MonoBehaviour:
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: select the node
+  alreadySelected: 0
   selectNode: 0
   child: {fileID: 4690546011179870550}
   script: select the node
@@ -64,8 +90,33 @@ MonoBehaviour:
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
+  alreadySelected: 0
   selectNode: 0
   nodeType: 1
+  alreadyRead: 0
+--- !u!114 &-2863052744416558205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af14886abe9b92d46b571732b36c9c36, type: 3}
+  m_Name: ScriptNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 8db82451e1c4c5e499e09fa5d4d7b08e
+  position: {x: -246.00002, y: 759.45}
+  btContainer:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 4
+  alreadySelected: 0
+  selectNode: 0
+  child: {fileID: 5427379441296893724}
+  script: 4
   alreadyRead: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -92,8 +143,35 @@ MonoBehaviour:
   - {fileID: 8108264417154644456}
   - {fileID: -3679598596443553998}
   - {fileID: 4690546011179870550}
+  - {fileID: -7451543758228538188}
+  - {fileID: -2863052744416558205}
+  - {fileID: 3515097443058369509}
+  - {fileID: 2631341193625314252}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
+--- !u!114 &2631341193625314252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449728e7d30792549904d07cebdd4628, type: 3}
+  m_Name: ScriptEndNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 8bc517542b4a7b344986a0f7bfd80b54
+  position: {x: -88.000015, y: 887.4501}
+  btContainer:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  nodeType: 1
+  alreadyRead: 0
 --- !u!114 &2711067805567916458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,9 +191,34 @@ MonoBehaviour:
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 1
+  alreadySelected: 0
   selectNode: 0
-  child: {fileID: 5427379441296893724}
+  child: {fileID: -7451543758228538188}
   script: select First
+  alreadyRead: 0
+--- !u!114 &3515097443058369509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af14886abe9b92d46b571732b36c9c36, type: 3}
+  m_Name: ScriptNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 1bbde0629e4a79149b950affa05fb9fb
+  position: {x: -88.000015, y: 759.45}
+  btContainer:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 5
+  alreadySelected: 0
+  selectNode: 0
+  child: {fileID: 2631341193625314252}
+  script: 5
   alreadyRead: 0
 --- !u!114 &3768986575803770624
 MonoBehaviour:
@@ -136,6 +239,7 @@ MonoBehaviour:
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
+  alreadySelected: 0
   selectNode: 0
   child: {fileID: -5334285929567914742}
 --- !u!114 &4690546011179870550
@@ -157,6 +261,7 @@ MonoBehaviour:
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 1
+  alreadySelected: 0
   selectNode: 0
   children:
   - {fileID: 2711067805567916458}
@@ -177,10 +282,11 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a10ca6cee6f29a74e9aba34acec41b6b
-  position: {x: -167.00002, y: 444}
+  position: {x: -246.00002, y: 887.4501}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
+  alreadySelected: 0
   selectNode: 0
   nodeType: 1
   alreadyRead: 0
@@ -203,6 +309,7 @@ MonoBehaviour:
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 2
+  alreadySelected: 0
   selectNode: 0
   child: {fileID: -7455711664884971938}
   script: select second
@@ -226,6 +333,7 @@ MonoBehaviour:
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 3
+  alreadySelected: 0
   selectNode: 0
   child: {fileID: -3679598596443553998}
   script: select third
