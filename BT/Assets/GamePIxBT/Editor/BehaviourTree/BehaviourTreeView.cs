@@ -111,8 +111,6 @@ public class BehaviourTreeView : GraphView
     // 그리그뷰 바뀌면 업데이트
     private GraphViewChange OngGraphViewChanged(GraphViewChange graphViewChange)
     {
-        Debug.Log("Changed");
-
         // 그레프에서 무언가가 제거 되면 실행
         if(graphViewChange.elementsToRemove != null)
         {

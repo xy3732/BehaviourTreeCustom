@@ -80,6 +80,7 @@ public class BehaviourTree : ScriptableObject
         if(decorator)
         {
             Undo.RecordObject(decorator, "Behaviour Tree (AddChild)");
+            if (child.GetType() == typeof(MergeNode)) AddParent(decorator, child);
             decorator.child = child;
             EditorUtility.SetDirty(decorator);
         }
@@ -101,6 +102,30 @@ public class BehaviourTree : ScriptableObject
         }
     }
 
+    // parent 리스트에 parent 추가
+    public void AddParent(Node parent, Node nowNode)
+    {
+        var confluence = nowNode as ConfluenceNode;
+        if(confluence)
+        {
+            Undo.RecordObject(confluence, "Behaviour Tree (AddParent)");
+            confluence.parents.Add(parent);
+            EditorUtility.SetDirty(confluence);
+        }
+    }
+
+    // parent 리스트에서 parent 제거
+    public void RemoveParent(Node parent, Node nowNode)
+    {
+        var confluence = nowNode as ConfluenceNode;
+        if(confluence)
+        {
+            Undo.RecordObject(confluence, "Behaviour Tree (RemoveParent)");
+            confluence.parents.Remove(parent);
+            EditorUtility.SetDirty(confluence);
+        }
+    }
+
     // 노드 끼리 만들어진 부모자식 상속 관계를 삭제한다.
     public void RemoveChild(Node parent, Node child)
     {
@@ -116,6 +141,7 @@ public class BehaviourTree : ScriptableObject
         if (decorator)
         {
             Undo.RecordObject(decorator, "Behaviour Tree (RemoveChild)");
+            if (decorator.child.GetType() == typeof(MergeNode)) RemoveParent(parent, child);
             decorator.child = null;
             EditorUtility.SetDirty(decorator);
         }

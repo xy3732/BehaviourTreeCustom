@@ -1,28 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-7455711664884971938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 449728e7d30792549904d07cebdd4628, type: 3}
-  m_Name: ScriptEndNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 65d68131baaacb442acab6f20175545c
-  position: {x: 0.000030517578, y: 444.3225}
-  btContainer:
-    moveToPosition: {x: 0, y: 0, z: 0}
-  description: 
-  alreadySelected: 0
-  selectNode: 0
-  nodeType: 1
-  alreadyRead: 0
 --- !u!114 &-7451543758228538188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,29 +48,6 @@ MonoBehaviour:
   child: {fileID: 4690546011179870550}
   script: select the node
   alreadyRead: 0
---- !u!114 &-3679598596443553998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 449728e7d30792549904d07cebdd4628, type: 3}
-  m_Name: ScriptEndNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: ed6266954f954de46962654998faa6f7
-  position: {x: 166.99997, y: 445.00003}
-  btContainer:
-    moveToPosition: {x: 0, y: 0, z: 0}
-  description: 
-  alreadySelected: 0
-  selectNode: 0
-  nodeType: 1
-  alreadyRead: 0
 --- !u!114 &-2863052744416558205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +72,29 @@ MonoBehaviour:
   child: {fileID: 5427379441296893724}
   script: 4
   alreadyRead: 0
+--- !u!114 &-114473102462292570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 449728e7d30792549904d07cebdd4628, type: 3}
+  m_Name: ScriptEndNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 37e0af0851aead54fa441e3355827760
+  position: {x: 88, y: 612}
+  btContainer:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  nodeType: 1
+  alreadyRead: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,18 +112,18 @@ MonoBehaviour:
   treeState: 0
   nodes:
   - {fileID: 3768986575803770624}
-  - {fileID: -7455711664884971938}
   - {fileID: 5427379441296893724}
   - {fileID: 2711067805567916458}
   - {fileID: 7988439208666546115}
   - {fileID: -5334285929567914742}
   - {fileID: 8108264417154644456}
-  - {fileID: -3679598596443553998}
   - {fileID: 4690546011179870550}
   - {fileID: -7451543758228538188}
   - {fileID: -2863052744416558205}
   - {fileID: 3515097443058369509}
   - {fileID: 2631341193625314252}
+  - {fileID: 9018312224308434481}
+  - {fileID: -114473102462292570}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &2631341193625314252
@@ -311,7 +288,7 @@ MonoBehaviour:
   description: 2
   alreadySelected: 0
   selectNode: 0
-  child: {fileID: -7455711664884971938}
+  child: {fileID: 9018312224308434481}
   script: select second
   alreadyRead: 0
 --- !u!114 &8108264417154644456
@@ -329,12 +306,37 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: c727357c12352c84a82316523182e485
-  position: {x: 167.00002, y: 305}
+  position: {x: 167, y: 305}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 3
   alreadySelected: 0
   selectNode: 0
-  child: {fileID: -3679598596443553998}
+  child: {fileID: 9018312224308434481}
   script: select third
   alreadyRead: 0
+--- !u!114 &9018312224308434481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87927244cf9ca314dabf9eb008ba49b1, type: 3}
+  m_Name: MergeNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 6768eb4dc142b1b4e9d04a7d83784639
+  position: {x: 88, y: 468}
+  btContainer:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  parents:
+  - {fileID: 7988439208666546115}
+  - {fileID: 8108264417154644456}
+  child: {fileID: -114473102462292570}
