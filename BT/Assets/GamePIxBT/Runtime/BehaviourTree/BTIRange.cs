@@ -5,7 +5,7 @@ using UnityEngine;
 public class BTIRange : MonoBehaviour
 {
     Container container;
-    void Start()
+    void Awake()
     {
         container = GetComponentInParent<BehaviourTreeRunner>().container;
     }
