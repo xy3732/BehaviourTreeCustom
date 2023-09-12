@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ScriptEndNode : ActionNode
 {
-    public BehaviourTreeType nodeType = BehaviourTreeType.script;
-
     public bool alreadyRead = false;
     
     protected override void OnStart()
@@ -23,10 +21,14 @@ public class ScriptEndNode : ActionNode
     {
         // 해당 스크립트 종료시 scriptTriger 종료
         if (container.isScriptTriger)
-        {
+        { 
             alreadyRead = true;
             container.isScriptTriger = false;
+
+            Debug.Log(container.isScriptTriger);
         }
+
+        Debug.Log("Script end");
 
         // 해당 BehaviourTree 종료
         return State.Success;

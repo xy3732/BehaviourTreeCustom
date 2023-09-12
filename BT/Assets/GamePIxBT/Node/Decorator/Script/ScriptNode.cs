@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ScriptNode : DecoratorNode
 {
-    BehaviourTreeType nodeType = BehaviourTreeType.script;
-
     [TextArea(4, 2)] public string script;
     public bool alreadyRead = false;
 
@@ -16,8 +14,6 @@ public class ScriptNode : DecoratorNode
         // text ¼³Á¤
         container.textScript = script;
         UIManager.instance.setText(container.textScript);
-
-        Debug.Log($"{container.textScript}");
     }
 
     protected override void OnStop()

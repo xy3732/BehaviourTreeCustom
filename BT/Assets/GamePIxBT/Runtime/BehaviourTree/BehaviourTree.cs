@@ -80,6 +80,7 @@ public class BehaviourTree : ScriptableObject
         if(decorator)
         {
             Undo.RecordObject(decorator, "Behaviour Tree (AddChild)");
+            //if (child.GetType() == typeof(MergeNode)) AddParent(decorator, child);
             decorator.child = child;
             EditorUtility.SetDirty(decorator);
         }
@@ -90,6 +91,38 @@ public class BehaviourTree : ScriptableObject
             Undo.RecordObject(composite, "Behaviour Tree (AddChild)");
             composite.children.Add(child);
             EditorUtility.SetDirty(composite);
+        }
+
+        ConfluenceNode confluence = parent as ConfluenceNode;
+        if(confluence)
+        {
+            Undo.RecordObject(confluence, "Behaviour Tree (AddChild)");
+            confluence.child = child;
+            EditorUtility.SetDirty(confluence);
+        }
+    }
+
+    // parent 리스트에 parent 추가
+    public void AddParent(Node parent, Node nowNode)
+    {
+        var confluence = nowNode as ConfluenceNode;
+        if(confluence)
+        {
+            Undo.RecordObject(confluence, "Behaviour Tree (AddParent)");
+            confluence.parents.Add(parent);
+            EditorUtility.SetDirty(confluence);
+        }
+    }
+
+    // parent 리스트에서 parent 제거
+    public void RemoveParent(Node parent, Node nowNode)
+    {
+        var confluence = nowNode as ConfluenceNode;
+        if(confluence)
+        {
+            Undo.RecordObject(confluence, "Behaviour Tree (RemoveParent)");
+            confluence.parents.Remove(parent);
+            EditorUtility.SetDirty(confluence);
         }
     }
 
@@ -108,8 +141,17 @@ public class BehaviourTree : ScriptableObject
         if (decorator)
         {
             Undo.RecordObject(decorator, "Behaviour Tree (RemoveChild)");
+            //if (decorator.child.GetType() == typeof(MergeNode)) RemoveParent(parent, child);
             decorator.child = null;
             EditorUtility.SetDirty(decorator);
+        }
+
+        ConfluenceNode confluence = parent as ConfluenceNode;
+        if (confluence)
+        {
+            Undo.RecordObject(confluence, "Behaviour Tree (RemoveChild)");
+            confluence.child = null;
+            EditorUtility.SetDirty(confluence);
         }
 
         CompositeNode composite = parent as CompositeNode;
@@ -136,6 +178,12 @@ public class BehaviourTree : ScriptableObject
         if (decorator && decorator.child != null)
         {
             children.Add(decorator.child);
+        }
+
+        ConfluenceNode confluence = parent as ConfluenceNode;
+        if (confluence && confluence.child != null)
+        {
+            children.Add(confluence.child);
         }
 
         CompositeNode composite = parent as CompositeNode;

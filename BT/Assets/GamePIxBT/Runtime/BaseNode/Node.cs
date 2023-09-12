@@ -14,13 +14,16 @@ public abstract class Node : ScriptableObject
     // 기본 State는 Running으로 설정
     [HideInInspector] public State state = State.Running;
     [HideInInspector] public bool started = false;
-    [HideInInspector] public string guid;
+    public string guid;
     [HideInInspector] public Vector2 position;
     [HideInInspector] public BTContainer btContainer;
     [HideInInspector] public Container container;
 
     // 현재 노드의 설명문 작성 가능
     [TextArea(2,4)] public string description;
+    public bool alreadySelected = false;
+    // Script Only
+    [HideInInspector] public int selectNode = 0;
     public State Update()
     {
         // 해당 노드가 처음 실행 될떄 Onstart를 실행
@@ -57,6 +60,11 @@ public abstract class Node : ScriptableObject
     }
 
     public virtual Node Clone()
+    {
+        return Instantiate(this);
+    }
+
+    public virtual Node Clone(Node node)
     {
         return Instantiate(this);
     }

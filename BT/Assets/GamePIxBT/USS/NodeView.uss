@@ -112,6 +112,11 @@
     min-height: 2.5px;
 }
 
+.confluence #divider {
+    min-height: 2.5px;
+    background-color: rgba(252, 208, 161, 255);
+}
+
 .decorator #divider {
     background-color: rgb(74, 143, 231);
     min-height: 2.5px;
