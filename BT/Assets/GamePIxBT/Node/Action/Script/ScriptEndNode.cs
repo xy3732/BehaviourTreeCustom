@@ -28,7 +28,7 @@ public class ScriptEndNode : ActionNode
             Debug.Log(container.isScriptTriger);
         }
 
-        Debug.Log("end");
+        Debug.Log("Script end");
 
         // 해당 BehaviourTree 종료
         return State.Success;

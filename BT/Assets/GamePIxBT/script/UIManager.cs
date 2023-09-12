@@ -47,6 +47,10 @@ public class UIManager : MonoBehaviour
             // 버튼 이름 지정
             button.name = children[i].description;
 
+            // 버튼 내부에 있는 text 변경
+            var text = button.GetComponentInChildren<TextMeshProUGUI>();
+            text.text = children[i].description;
+
             // 버튼 부모 설정
             button.transform.SetParent(buttonSelectGroupObject.transform);
 

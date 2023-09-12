@@ -65,7 +65,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 97615e83156a6f54da86409e6877f153
-  position: {x: -792.99994, y: 696.01184}
+  position: {x: -427.9732, y: 698}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 4-2
@@ -89,7 +89,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 4dba924bc219f7042be9641febf49792
-  position: {x: -478.07535, y: 721.99994}
+  position: {x: -223.56335, y: 722.00006}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -111,7 +111,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 8db82451e1c4c5e499e09fa5d4d7b08e
-  position: {x: -792.99994, y: 574.0119}
+  position: {x: -427.9732, y: 576.00006}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 4
@@ -135,7 +135,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a991421b39ba26840bbe3cae4dfd598a
-  position: {x: -792.99994, y: 837.01184}
+  position: {x: -427.9732, y: 839}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -213,7 +213,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 389307c3915e13344b72b31ec7155dc6
-  position: {x: -477.99988, y: 289}
+  position: {x: -223.56335, y: 289}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 1-0
@@ -283,7 +283,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 1bbde0629e4a79149b950affa05fb9fb
-  position: {x: -478.07535, y: 575.99994}
+  position: {x: -223.56335, y: 576.00006}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 5
@@ -354,7 +354,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: b0e99186371b6cd44b98d0b8ce9215bf
-  position: {x: -477.99988, y: 439.00003}
+  position: {x: -223.56335, y: 439.00003}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
