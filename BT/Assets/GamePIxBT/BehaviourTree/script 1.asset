@@ -15,7 +15,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: f343b76686918094d9cf57897158fb67
-  position: {x: 0.00011004448, y: 415.00003}
+  position: {x: -167.00002, y: 480.8775}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -24,7 +24,6 @@ MonoBehaviour:
   children:
   - {fileID: -2863052744416558205}
   - {fileID: 3515097443058369509}
-  - {fileID: 707684300878627955}
   selectNumber: -1
 --- !u!114 &-5334285929567914742
 MonoBehaviour:
@@ -50,52 +49,6 @@ MonoBehaviour:
   child: {fileID: 4690546011179870550}
   script: select the node
   alreadyRead: 0
---- !u!114 &-4713411626271092011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af14886abe9b92d46b571732b36c9c36, type: 3}
-  m_Name: ScriptNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 97615e83156a6f54da86409e6877f153
-  position: {x: -792.99994, y: 696.01184}
-  btContainer:
-    moveToPosition: {x: 0, y: 0, z: 0}
-  description: 4-2
-  alreadySelected: 0
-  selectNode: 0
-  child: {fileID: -318766525388255576}
-  script: test node complete
-  alreadyRead: 0
---- !u!114 &-3478672482817628335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc5c8f8c25d13542bc9c52a97e708f7, type: 3}
-  m_Name: ScriptSequenceEndNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 4dba924bc219f7042be9641febf49792
-  position: {x: -478.07535, y: 721.99994}
-  btContainer:
-    moveToPosition: {x: 0, y: 0, z: 0}
-  description: 
-  alreadySelected: 0
-  selectNode: 0
-  alreadyRead: 0
 --- !u!114 &-2863052744416558205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,16 +64,16 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 8db82451e1c4c5e499e09fa5d4d7b08e
-  position: {x: -792.99994, y: 574.0119}
+  position: {x: -246.00002, y: 651.8775}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 4
   alreadySelected: 0
   selectNode: 0
-  child: {fileID: -4713411626271092011}
+  child: {fileID: 5427379441296893724}
   script: 4
   alreadyRead: 0
---- !u!114 &-318766525388255576
+--- !u!114 &-114473102462292570
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,18 +82,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc5c8f8c25d13542bc9c52a97e708f7, type: 3}
-  m_Name: ScriptSequenceEndNode
+  m_Script: {fileID: 11500000, guid: 449728e7d30792549904d07cebdd4628, type: 3}
+  m_Name: ScriptEndNode
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: a991421b39ba26840bbe3cae4dfd598a
-  position: {x: -792.99994, y: 837.01184}
+  guid: 37e0af0851aead54fa441e3355827760
+  position: {x: 88, y: 652}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   alreadySelected: 0
   selectNode: 0
+  nodeType: 1
   alreadyRead: 0
 --- !u!114 &11400000
 MonoBehaviour:
@@ -152,76 +106,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 29c4fc3c8794f454e9b2f2d68611b580, type: 3}
-  m_Name: script
+  m_Name: script 1
   m_EditorClassIdentifier: 
   behaviourTreeType: 1
   rootNode: {fileID: 3768986575803770624}
   treeState: 0
   nodes:
   - {fileID: 3768986575803770624}
+  - {fileID: 5427379441296893724}
   - {fileID: 2711067805567916458}
+  - {fileID: 7988439208666546115}
   - {fileID: -5334285929567914742}
+  - {fileID: 8108264417154644456}
   - {fileID: 4690546011179870550}
   - {fileID: -7451543758228538188}
   - {fileID: -2863052744416558205}
   - {fileID: 3515097443058369509}
   - {fileID: 2631341193625314252}
-  - {fileID: 707684300878627955}
-  - {fileID: -3478672482817628335}
-  - {fileID: -318766525388255576}
-  - {fileID: -4713411626271092011}
-  - {fileID: 746717448573546710}
-  - {fileID: 8664890114097817173}
+  - {fileID: 9018312224308434481}
+  - {fileID: -114473102462292570}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
---- !u!114 &707684300878627955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af14886abe9b92d46b571732b36c9c36, type: 3}
-  m_Name: ScriptNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: c966f62bff9f7344f8faeda042648bd1
-  position: {x: -0.000009059906, y: 595.26685}
-  btContainer:
-    moveToPosition: {x: 0, y: 0, z: 0}
-  description: end script
-  alreadySelected: 0
-  selectNode: 0
-  child: {fileID: 2631341193625314252}
-  script: end script
-  alreadyRead: 0
---- !u!114 &746717448573546710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af14886abe9b92d46b571732b36c9c36, type: 3}
-  m_Name: ScriptNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 389307c3915e13344b72b31ec7155dc6
-  position: {x: -477.99988, y: 289}
-  btContainer:
-    moveToPosition: {x: 0, y: 0, z: 0}
-  description: 1-0
-  alreadySelected: 0
-  selectNode: 0
-  child: {fileID: 8664890114097817173}
-  script: test 0
-  alreadyRead: 0
 --- !u!114 &2631341193625314252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,12 +142,13 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 8bc517542b4a7b344986a0f7bfd80b54
-  position: {x: -0.000009059906, y: 741.26685}
+  position: {x: -88.00001, y: 779.8775}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   alreadySelected: 0
   selectNode: 0
+  nodeType: 1
   alreadyRead: 0
 --- !u!114 &2711067805567916458
 MonoBehaviour:
@@ -259,7 +165,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: dfefcd8f4cd674f4fb5f8c61ed256833
-  position: {x: 0.000011920929, y: 289}
+  position: {x: -167.00002, y: 305}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 1
@@ -283,13 +189,13 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 1bbde0629e4a79149b950affa05fb9fb
-  position: {x: -478.07535, y: 575.99994}
+  position: {x: -88.00001, y: 651.8775}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 5
   alreadySelected: 0
   selectNode: 0
-  child: {fileID: -3478672482817628335}
+  child: {fileID: 2631341193625314252}
   script: 5
   alreadyRead: 0
 --- !u!114 &3768986575803770624
@@ -329,17 +235,18 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: ebc101e48d7b7164b926b6241cddc517
-  position: {x: 0.000011920929, y: 128.67752}
+  position: {x: -0.00001168251, y: 140.6775}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 1
   alreadySelected: 0
   selectNode: 0
   children:
-  - {fileID: 746717448573546710}
   - {fileID: 2711067805567916458}
+  - {fileID: 7988439208666546115}
+  - {fileID: 8108264417154644456}
   selectNumber: -1
---- !u!114 &8664890114097817173
+--- !u!114 &5427379441296893724
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -348,16 +255,91 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc5c8f8c25d13542bc9c52a97e708f7, type: 3}
-  m_Name: ScriptSequenceEndNode
+  m_Script: {fileID: 11500000, guid: 449728e7d30792549904d07cebdd4628, type: 3}
+  m_Name: ScriptEndNode
   m_EditorClassIdentifier: 
   state: 0
   started: 0
-  guid: b0e99186371b6cd44b98d0b8ce9215bf
-  position: {x: -477.99988, y: 439.00003}
+  guid: a10ca6cee6f29a74e9aba34acec41b6b
+  position: {x: -246.00002, y: 779.8775}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
   alreadySelected: 0
   selectNode: 0
+  nodeType: 1
   alreadyRead: 0
+--- !u!114 &7988439208666546115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af14886abe9b92d46b571732b36c9c36, type: 3}
+  m_Name: ScriptNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: b5df53d9ada72b74a932aa79e70d4f03
+  position: {x: 0, y: 305}
+  btContainer:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 2
+  alreadySelected: 0
+  selectNode: 0
+  child: {fileID: 9018312224308434481}
+  script: select second
+  alreadyRead: 0
+--- !u!114 &8108264417154644456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af14886abe9b92d46b571732b36c9c36, type: 3}
+  m_Name: ScriptNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: c727357c12352c84a82316523182e485
+  position: {x: 167, y: 305}
+  btContainer:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 3
+  alreadySelected: 0
+  selectNode: 0
+  child: {fileID: 9018312224308434481}
+  script: select third
+  alreadyRead: 0
+--- !u!114 &9018312224308434481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87927244cf9ca314dabf9eb008ba49b1, type: 3}
+  m_Name: MergeNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 6768eb4dc142b1b4e9d04a7d83784639
+  position: {x: 88, y: 481}
+  btContainer:
+    moveToPosition: {x: 0, y: 0, z: 0}
+  description: 
+  alreadySelected: 0
+  selectNode: 0
+  parents:
+  - {fileID: 7988439208666546115}
+  - {fileID: 8108264417154644456}
+  child: {fileID: -114473102462292570}
+  isCreated: 0

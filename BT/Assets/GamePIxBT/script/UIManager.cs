@@ -7,15 +7,16 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance;
-    public List<Button> selectButtonList = new List<Button>();
+    // 선택형 버튼 리스트
+    [HideInInspector] public List<Button> selectButtonList = new List<Button>();
 
+    // 대화 텍스트 출력
     [field: SerializeField] public TextMeshProUGUI textObject { get; set; }
 
     // UI 대화 버튼 선택창
-    [field: Space()]
+    [field: Space(20)]
     [field: SerializeField] public GameObject buttonFrefab { get; set; }
     [field: SerializeField] public GameObject buttonSelectGroupObject { get; set; }
-
     public void Awake()
     {
         instance = this;

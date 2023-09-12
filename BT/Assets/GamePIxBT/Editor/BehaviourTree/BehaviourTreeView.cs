@@ -87,6 +87,12 @@ public class BehaviourTreeView : GraphView
             Edge edge = parentView.output.ConnectTo(childView.input);
             edge.name = "EdgeLine";
 
+            if(parentView.node.GetType() == typeof(ScriptNode))
+            {
+                var test = parentView.node as ScriptNode;
+                //if (test.child.GetType() == typeof(MergeNode)) Debug.Log(test.guid);
+            }
+
             AddElement(edge);
         }
     }

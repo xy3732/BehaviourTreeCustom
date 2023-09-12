@@ -9,6 +9,8 @@ public class ScriptSequenceNode : CompositeNode
     public int selectNumber = -1;
     protected override void OnStart()
     {
+        container.scriptSequence = this;
+
         // 컨테이너에 있는 버튼선택값을 -1로 초기화
         container.buttonSelectNumber = -1;
 

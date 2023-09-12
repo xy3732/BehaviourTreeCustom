@@ -1242,7 +1242,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 694368252}
         m_TargetAssemblyTypeName: BehaviourTreeRunner, Assembly-CSharp
-        m_MethodName: ScriptTriger
+        m_MethodName: ScriptTrigerBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MergeNode : ConfluenceNode
+public class MergeNodeNOTUSE : ConfluenceNode
 {
     protected override void OnStart()
     {

@@ -80,7 +80,7 @@ public class BehaviourTree : ScriptableObject
         if(decorator)
         {
             Undo.RecordObject(decorator, "Behaviour Tree (AddChild)");
-            if (child.GetType() == typeof(MergeNode)) AddParent(decorator, child);
+            //if (child.GetType() == typeof(MergeNode)) AddParent(decorator, child);
             decorator.child = child;
             EditorUtility.SetDirty(decorator);
         }
@@ -141,7 +141,7 @@ public class BehaviourTree : ScriptableObject
         if (decorator)
         {
             Undo.RecordObject(decorator, "Behaviour Tree (RemoveChild)");
-            if (decorator.child.GetType() == typeof(MergeNode)) RemoveParent(parent, child);
+            //if (decorator.child.GetType() == typeof(MergeNode)) RemoveParent(parent, child);
             decorator.child = null;
             EditorUtility.SetDirty(decorator);
         }
