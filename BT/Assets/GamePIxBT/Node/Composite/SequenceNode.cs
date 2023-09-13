@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+
 
 #if UNITY_EDITOR
 using UnityEngine.Profiling;
@@ -22,9 +22,9 @@ public class SequenceNode : CompositeNode
 
     protected override State OnUpdate()
     {
-        Profiler.BeginSample("SequenceNode");
-        // ÇöÀç current¹øÂ°¿¡ ÀÖ´Â ÀÚ½Ä ³ëµå¸¦ °¡Á®¿À±â.
-        // °á°úÀûÀ¸·Î ¼ø¼­´ë·Î ½ÇÇàÀÌ ¾ÈµÈ ³ëµå¸¦ °¡Á®¿Í¼­ ½ÇÇà ½ÃÅ²´Ù.
+        UnityEngine.Profiling.Profiler.BeginSample("SequenceNode");
+        // ï¿½ï¿½ï¿½ï¿½ currentï¿½ï¿½Â°ï¿½ï¿½ ï¿½Ö´ï¿½ ï¿½Ú½ï¿½ ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
+        // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Èµï¿½ ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å²ï¿½ï¿½.
         var child = children[current];
 
         switch (child.Update())
@@ -33,15 +33,15 @@ public class SequenceNode : CompositeNode
                 return State.Running;
             case State.Failure:
                 return State.Failure;
-                // ¸¸¾à ÀÌ¹Ì ½ÇÇàÇÑ ³ëµå ÀÌ¸é current Áõ°¡.
+                // ï¿½ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ì¸ï¿½ current ï¿½ï¿½ï¿½ï¿½.
             case State.Success:
                 current++;
                 break;
         }
 
-        Profiler.EndSample();
-        // ÇöÀç ½ÇÇàÁßÀÎ ³ëµåÀÇ ¹øÂ°°¡ ÀÚ½ÄÀÇ ¸¶Áö¸· ¹øÂ°¿Í °°Àº°æ¿ì ¼º°ø ¹ÝÈ¯,
-        // ¾Æ´Ï¶ó¸é ½ÇÇàÁßÀ¸·Î ¹ÝÈ¯.
+        UnityEngine.Profiling.Profiler.EndSample();
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â°ï¿½ï¿½ ï¿½Ú½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Â°ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯,
+        // ï¿½Æ´Ï¶ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯.
         return current == children.Count ? State.Success : State.Running;
     }
 }

@@ -162,6 +162,8 @@ public class BehaviourTree : ScriptableObject
             EditorUtility.SetDirty(composite);
         }
     }
+#endif
+    #endregion
 
     // 노드 별 자식값을 반환
     public static List<Node> GetChildren(Node parent)
@@ -194,8 +196,6 @@ public class BehaviourTree : ScriptableObject
 
         return children;
     }
-#endif
-    #endregion
 
     public static void Traverse(Node node, System.Action<Node> visiter)
     {
@@ -206,7 +206,6 @@ public class BehaviourTree : ScriptableObject
             children.ForEach((n) => Traverse(n, visiter));
         }
     }
-
     // Clone으로 실행
     public BehaviourTree Clone()
     {
@@ -218,7 +217,6 @@ public class BehaviourTree : ScriptableObject
         {
             tree.nodes.Add(n);
         });
-
         return tree;
     }
 

@@ -48,17 +48,6 @@ public abstract class Node : ScriptableObject
         return state;
     }
 
-    // 노드 강제 종료
-    public void Abort()
-    {
-        BehaviourTree.Traverse(this, (n) => 
-        {
-            n.started = false;
-            n.state = State.Running;
-            n.OnStop();
-        });
-    }
-
     public virtual Node Clone()
     {
         return Instantiate(this);
