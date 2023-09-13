@@ -65,7 +65,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 97615e83156a6f54da86409e6877f153
-  position: {x: -427.9732, y: 698}
+  position: {x: -428.00006, y: 722}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 4-2
@@ -89,7 +89,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 4dba924bc219f7042be9641febf49792
-  position: {x: -223.56335, y: 722.00006}
+  position: {x: -223.99998, y: 722}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -135,7 +135,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: a991421b39ba26840bbe3cae4dfd598a
-  position: {x: -427.9732, y: 839}
+  position: {x: -428.00006, y: 856.1925}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -189,7 +189,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: c966f62bff9f7344f8faeda042648bd1
-  position: {x: -0.000009059906, y: 595.26685}
+  position: {x: -0.00002527237, y: 578}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: end script
@@ -213,7 +213,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 389307c3915e13344b72b31ec7155dc6
-  position: {x: -223.56335, y: 289}
+  position: {x: -224, y: 289}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 1-0
@@ -237,7 +237,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 8bc517542b4a7b344986a0f7bfd80b54
-  position: {x: -0.000009059906, y: 741.26685}
+  position: {x: -0.00002527237, y: 721.99994}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 
@@ -283,7 +283,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: 1bbde0629e4a79149b950affa05fb9fb
-  position: {x: -223.56335, y: 576.00006}
+  position: {x: -224.00008, y: 578}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 5
@@ -354,7 +354,7 @@ MonoBehaviour:
   state: 0
   started: 0
   guid: b0e99186371b6cd44b98d0b8ce9215bf
-  position: {x: -223.56335, y: 439.00003}
+  position: {x: -224, y: 414.99997}
   btContainer:
     moveToPosition: {x: 0, y: 0, z: 0}
   description: 

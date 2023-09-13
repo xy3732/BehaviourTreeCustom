@@ -27,6 +27,12 @@ public class BehaviourTreeRunner : MonoBehaviour
         // 기본적인 값을 설정. [rigidbody, transform 등] 저장.
         container = CreateBehaviourTreeContext();
 
+        // 하위에 있는 스크립트 Init
+        var component = gameObject?.GetComponentInChildren<BTIRange>();
+        component?.OnRunnerAwake(container);
+
+        Debug.Log(component);
+
         // 실행되면 트리 복사 해서 사용.
         tree = tree.Clone();
         tree.Bind(container);
@@ -44,7 +50,7 @@ public class BehaviourTreeRunner : MonoBehaviour
     {
         // 이미 컨테이너를 가지고 있으면 리턴
         if (container != null) return container;
-
+       
         // 없으면 생성
         return Container.CreateFromGameObject(gameObject);
     }

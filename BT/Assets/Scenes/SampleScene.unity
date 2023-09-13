@@ -359,7 +359,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694368246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.75}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1209,6 +1209,10 @@ PrefabInstance:
     - target: {fileID: 1481588880259851653, guid: 0010fbc632d99494d9cc81a91891eab8, type: 3}
       propertyPath: m_Name
       value: Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 1481588880259851653, guid: 0010fbc632d99494d9cc81a91891eab8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1481588880259851662, guid: 0010fbc632d99494d9cc81a91891eab8, type: 3}
       propertyPath: m_RootOrder
